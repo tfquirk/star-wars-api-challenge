@@ -35,17 +35,17 @@ html {
 .backBtn {
   color: white;
   margin: auto 1vw;
-  padding: 0.5vw;
+  padding: 25vh 0.5vw;
 }
 
 .forwardBtn {
   color: white;
   margin: auto 1vw;
-  padding: 0.5vw;
+  padding: 25vh 0.5vw;
 }
 
-div.forwardBtn:hover,
-div.backBtn:hover {
+div.backBtn:hover,
+div.forwardBtn:hover {
   color: #ff3e43;
 }
 
