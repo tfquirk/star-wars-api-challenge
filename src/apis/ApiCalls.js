@@ -10,8 +10,8 @@ import {
 const CHARACTERS_API = "https://swapi.co/api/people/?page=1";
 
 // fecth to star wars api and get characters
-export function fetchCharacters(dispatch, test) {
-  return fetch(test || CHARACTERS_API)
+export function fetchCharacters(dispatch, endpoint) {
+  return fetch(endpoint || CHARACTERS_API)
     .then(res => res.json())
     .then(characters => {
       console.log(characters);
