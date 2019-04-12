@@ -8,12 +8,8 @@ import "../styles/Homepage.css";
 const Homepage = () => {
   return (
     <Fragment>
-      <div className="stars">
-        <div className="twinkling">
-          <div className="clouds">
-            <CharacterCards />
-          </div>
-        </div>
+      <div className="homepageContainer">
+        <CharacterCards />
       </div>
     </Fragment>
   );

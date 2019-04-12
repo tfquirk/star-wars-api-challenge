@@ -1,121 +1,60 @@
 /* Homepage CSS */
 
-/* Space and stars background CSS for star taken from tutorial found here:
-  https://www.script-tutorials.com/night-sky-with-twinkling-stars/
+/* Space and stars background image found here:
+  http://www.script-tutorials.com/demos/360/images/stars.png
 */
 
-@keyframes move-twink-back {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: -10000px 5000px;
-  }
-}
-
-@-webkit-keyframes move-twink-back {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: -10000px 5000px;
-  }
-}
-
-@-moz-keyframes move-twink-back {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: -10000px 5000px;
-  }
-}
-
-@-ms-keyframes move-twink-back {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: -10000px 5000px;
-  }
-}
-
-@keyframes move-clouds-back {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 10000px 0;
-  }
-}
-
-@-webkit-keyframes move-clouds-back {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 10000px 0;
-  }
-}
-
-@-moz-keyframes move-clouds-back {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 10000px 0;
-  }
-}
-
-@-ms-keyframes move-clouds-back {
-  from {
-    background-position: 0;
-  }
-  to {
-    background-position: 10000px 0;
-  }
-}
-
-.stars,
-.twinkling,
-.clouds {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.stars {
+html {
   background: #000
     url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top
     center;
   z-index: 0;
 }
 
-.twinkling {
-  background: transparent
-    url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat
-    top center;
-  z-index: 1;
-  -moz-animation: move-twink-back 200s linear infinite;
-  -ms-animation: move-twink-back 200s linear infinite;
-  -o-animation: move-twink-back 200s linear infinite;
-  -webkit-animation: move-twink-back 200s linear infinite;
-  animation: move-twink-back 200s linear infinite;
+/* .homepageContainer {
+  margin: 2vh 0;
+} */
+
+.charactersContainer {
+  width: 95%;
+  margin-top: 3vh;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.clouds {
-  background: transparent
-    url(http://www.script-tutorials.com/demos/360/images/clouds.png) repeat top
-    center;
-  z-index: 3;
-  -moz-animation: move-clouds-back 200s linear infinite;
-  -ms-animation: move-clouds-back 200s linear infinite;
-  -o-animation: move-clouds-back 200s linear infinite;
-  -webkit-animation: move-clouds-back 200s linear infinite;
-  animation: move-clouds-back 200s linear infinite;
+.characterCard {
+  width: 17vw;
+  height: 30vh;
+  margin: 2vh auto;
+  background-color: grey;
+  text-align: center;
+}
+
+.characterCard:hover {
+  background-color: purple;
+}
+
+.backBtn {
+  color: white;
+  margin: auto 1vw;
+  padding: 0.5vw;
+}
+
+.forwardBtn {
+  color: white;
+  margin: auto 1vw;
+  padding: 0.5vw;
+}
+
+div.forwardBtn:hover,
+div.backBtn:hover {
+  color: #ff3e43;
+}
+
+.movementContainer {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
 }

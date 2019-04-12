@@ -7,7 +7,7 @@ const CharacterCard = props => {
     <div className="characterCard">
       <div className="characterImg">
         <img
-          src="https://dummyimage.com/300x300/fff/aaa"
+          src="https://dummyimage.com/250x250/fff/aaa"
           alt="Star Wars Character"
         />
       </div>
