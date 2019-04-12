@@ -1,46 +1,42 @@
 // import types to be used with dispatches
-import {
-  UPDATE_CHARACTERS,
-  CHARACTERS_NEXT,
-  CHARACTERS_BACK
-} from "../types/types";
+import { UPDATE_PLANETS, PLANETS_NEXT, PLANETS_BACK } from "../types/types";
 
 // set API endpoints to hit as constants
-const CHARACTERS_API = "https://swapi.co/api/people/?page=1";
+const PLANETS_API = "https://swapi.co/api/planets/?page=1";
 
 // fecth to star wars api and get characters
-export function fetchCharacters(dispatch, endpoint) {
-  return fetch(endpoint || CHARACTERS_API)
+export function fetchPlanets(dispatch, endpoint) {
+  return fetch(endpoint || PLANETS_API)
     .then(res => res.json())
-    .then(characters => {
+    .then(planets => {
       // update array of 10 characters in Redux state
       dispatch({
-        type: UPDATE_CHARACTERS,
-        payload: characters["results"]
+        type: UPDATE_PLANETS,
+        payload: planets["results"]
       });
       // if there is a next key, add it to Redux state
       // so the button knows where to fecth to next
-      if (characters.next) {
+      if (planets.next) {
         dispatch({
-          type: CHARACTERS_NEXT,
-          payload: characters["next"]
+          type: PLANETS_NEXT,
+          payload: planets["next"]
         });
       } else {
         dispatch({
-          type: CHARACTERS_NEXT,
+          type: PLANETS_NEXT,
           payload: ""
         });
       }
       // if there is a previous key, add it to Redux state
       // so the button knows where to fecth to next
-      if (characters.previous) {
+      if (planets.previous) {
         dispatch({
-          type: CHARACTERS_BACK,
-          payload: characters["previous"]
+          type: PLANETS_BACK,
+          payload: planets["previous"]
         });
       } else {
         dispatch({
-          type: CHARACTERS_BACK,
+          type: PLANETS_BACK,
           payload: ""
         });
       }

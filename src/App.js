@@ -8,6 +8,7 @@ import { connect } from "react-redux";
 
 //import individual API call abstractions
 import { fetchCharacters } from "./apis/CharacterApiCall";
+import { fetchPlanets } from "./apis/PlanetApiCall";
 
 // import needed containers
 import Home from "./containers/Home";
@@ -15,6 +16,7 @@ import Home from "./containers/Home";
 class App extends Component {
   componentDidMount() {
     this.props.fetchCharacters();
+    this.props.fetchPlanets();
   }
 
   render() {
@@ -35,7 +37,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchCharacters: () => fetchCharacters(dispatch)
+    fetchCharacters: () => fetchCharacters(dispatch),
+    fetchPlanets: () => fetchPlanets(dispatch)
   };
 };
 
