@@ -10,7 +10,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 // setup for Redux
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import reducer from "./reducer/rootReducer";
+import reducer from "./reducers/rootReducer";
 
 const store = createStore(reducer);
 
