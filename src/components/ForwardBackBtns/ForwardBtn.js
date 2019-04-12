@@ -1,13 +1,33 @@
 import React from "react";
 
-// return a forward btn that will perform an action onClick
+// connect to Redux state
+import { connect } from "react-redux";
 
+//import individual API call abstractions
+import { fetchCharacters } from "../../apis/ApiCalls";
+
+// return a forward btn that will perform an action onClick
 const ForwardBtn = props => {
+  const handleNext = () => {
+    props.fetchCharacters(props.charactersNext);
+  };
+
   return (
-    <div className="forwardBtn">
-      <i class="fas fa-caret-right fa-6x" />
+    <div className="forwardBtn" onClick={handleNext}>
+      <i className="fas fa-caret-right fa-6x" />
     </div>
   );
 };
 
-export default ForwardBtn;
+const mapStateToProps = state => {
+  return { charactersNext: state.charactersNext };
+};
+
+const mapDispatchToProps = dispatch => {
+  return { fetchCharacters: endpoint => fetchCharacters(dispatch, endpoint) };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ForwardBtn);
