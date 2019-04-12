@@ -9,6 +9,7 @@
   background-color: #000000;
   overflow: hidden;
   font-family: "Varela Round", "Comfortaa", sans-serif;
+  z-index: 4;
 }
 
 .navLogo {
