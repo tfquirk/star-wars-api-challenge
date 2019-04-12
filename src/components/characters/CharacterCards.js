@@ -17,17 +17,20 @@ const CharacterCards = props => {
   };
 
   return (
-    /* movementContainer holds the forward and back buttons
-    as well as the character cards */
-    <div className="movementContainer">
-      {/* only display back button if this is not the first serious of cards */}
-      {props.charactersBack ? <BackBtn /> : <div className="backBtn" />}
-      <div className="charactersContainer">
-        {/* create cards from the characters currently in redux state */}
-        {mapCharactersToCharacterCards()}
+    <div className="allCharacters">
+      <h1>Characters:</h1>
+      {/* movementContainer holds the forward and back buttons as well as the
+      character cards */}
+      <div className="movementContainer">
+        {/* only display back button if this is not the first serious of cards */}
+        {props.charactersBack ? <BackBtn /> : <div className="backBtn" />}
+        <div className="charactersContainer">
+          {/* create cards from the characters currently in redux state */}
+          {mapCharactersToCharacterCards()}
+        </div>
+        {/* only display forward button if this is not the last serious of cards */}
+        {props.charactersNext ? <ForwardBtn /> : <div className="forwardBtn" />}
       </div>
-      {/* only display forward button if this is not the last serious of cards */}
-      {props.charactersNext ? <ForwardBtn /> : <div className="forwardBtn" />}
     </div>
   );
 };

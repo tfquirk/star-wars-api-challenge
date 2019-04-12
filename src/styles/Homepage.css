@@ -11,14 +11,22 @@ html {
   z-index: 0;
 }
 
+.allCharacters h1 {
+  color: yellow;
+  font-weight: bold;
+  font-size: 3em;
+  font-family: "Poppins", "PT+Sans", "Alegreya+Sans", sans-serif;
+  margin-bottom: 0;
+  margin-left: 4vw;
+}
+
 .charactersContainer {
   width: 95%;
-  margin-top: 3vh;
+  margin-top: 1vh;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-wrap: wrap;
-  font-family: "Poppins", "PT+Sans", "Alegreya+Sans", sans-serif;
 }
 
 .characterCard {
