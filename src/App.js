@@ -7,7 +7,7 @@ import { Route, withRouter, Redirect, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 
 //import individual API call abstractions
-import { fetchCharacters } from "./apis/ApiCalls";
+import { fetchCharacters } from "./apis/CharacterApiCall";
 
 // import needed containers
 import Home from "./containers/Home";

@@ -4,7 +4,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 //import individual API call abstractions
-import { fetchCharacters } from "../../apis/ApiCalls";
+import { fetchCharacters } from "../../apis/CharacterApiCall";
 
 // return a back btn that will perform an action onClick
 const BackBtn = props => {
