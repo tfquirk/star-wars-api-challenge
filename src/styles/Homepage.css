@@ -18,19 +18,38 @@ html {
   margin-right: auto;
   display: flex;
   flex-wrap: wrap;
+  font-family: "Poppins", "PT+Sans", "Alegreya+Sans", sans-serif;
 }
 
 .characterCard {
   width: 17vw;
-  height: 30vh;
-  margin: 2vh auto;
-  background-color: grey;
+  height: 32vh;
+  margin: 2vh auto 0 auto;
+  background-color: #e7dfdd;
   text-align: center;
+  border-radius: 10px;
+  color: #a239ca;
+}
+
+.characterImg {
+  padding-top: 2vh;
+}
+
+.characterCard img {
+  border-radius: 100%;
+}
+
+.characterCard h3 {
+  font-size: 1.5em;
+  margin-bottom: 0.5vh;
 }
 
 .characterCard:hover {
-  background-color: purple;
+  background-color: #a239ca;
+  color: #fff !important;
 }
+
+/* Forward and Back buttons */
 
 .backBtn {
   color: white;
