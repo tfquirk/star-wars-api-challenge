@@ -1,6 +1,8 @@
 // import types to be used with dispatches
 import {
   UPDATE_CHARACTERS,
+  CHARACTERS_NEXT,
+  CHARACTERS_BACK,
   UPDATE_PLANETS,
   UPDATE_VEHICLES,
   UPDATE_HISTORY
@@ -15,9 +17,21 @@ export function fetchCharacters(dispatch, endpoint) {
     .then(res => res.json())
     .then(characters => {
       console.log(characters);
-      return dispatch({
+      dispatch({
         type: UPDATE_CHARACTERS,
         payload: characters["results"]
       });
+      if (characters.next) {
+        dispatch({
+          type: CHARACTERS_NEXT,
+          payload: characters["next"]
+        });
+      }
+      if (characters.previous) {
+        dispatch({
+          type: CHARACTERS_BACK,
+          payload: characters["previous"]
+        });
+      }
     });
 }
