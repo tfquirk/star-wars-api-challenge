@@ -7,13 +7,17 @@ import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 // styling
-import "../styles/Navbar.css";
+// import "../styles/Navbar.css";
 
 const NavBar = props => {
   return (
     <div className="nav">
       <a href="/">
-        <img className="navLogo" src="#" alt="Star Wars Wiki Logo" />
+        <img
+          className="navLogo"
+          src="/images/sww_log.png"
+          alt="Star Wars Wiki Logo"
+        />
       </a>
       <div className="links">
         <ul>

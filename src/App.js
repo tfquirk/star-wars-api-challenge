@@ -1,6 +1,10 @@
 import React, { Component, Fragment } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+
+// import ability to use React Router funcitionality
+import { Route, withRouter, Redirect, Switch } from "react-router-dom";
+
+// import needed containers
+import Home from "./containers/Home";
 
 class App extends Component {
   render() {
