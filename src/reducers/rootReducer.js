@@ -2,7 +2,8 @@
 const initialState = {
   characters: [],
   planets: [],
-  vehicles: []
+  vehicles: [],
+  history: []
 };
 
 // reducer with cases for Redux
@@ -14,6 +15,8 @@ function reducer(state = initialState, action) {
       return { ...state, planets: action.payload };
     case "UPDATE_VEHICLES":
       return { ...state, vehicles: action.payload };
+    case "UPDATE_HISTORY":
+      return { ...state, history: [...state.history, action.payload] };
     default:
       return state;
   }
