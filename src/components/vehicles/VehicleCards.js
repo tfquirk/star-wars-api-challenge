@@ -3,48 +3,48 @@ import React from "react";
 // connect to Redux state
 import { connect } from "react-redux";
 
-// styling for planets
-import "../../styles/Homepage/HomepagePlanets.css";
+// styling for vehicles
+import "../../styles/Homepage/HomepageVehicles.css";
 
 //import individual API call abstractions
-import { fetchPlanets } from "../../apis/PlanetApiCall";
+import { fetchVehicles } from "../../apis/VehicleApiCall";
 
-// import CharacterCard to use to make cards for each planet
-import PlanetCard from "./PlanetCard";
+// import CharacterCard to use to make cards for each vehicle
+import VehicleCard from "./VehicleCard";
 import BackBtn from "../ForwardBackBtns/BackBtn";
 import ForwardBtn from "../ForwardBackBtns/ForwardBtn";
 
 // return all container to hold all character cards on display
-const PlanetCards = props => {
-  const mapPlanetsToPlanetCards = () => {
-    return props.planets.map(planet => {
-      return <PlanetCard key={planet.url} planet={planet} />;
+const VehicleCards = props => {
+  const mapVehiclesToVehicleCards = () => {
+    return props.vehicles.map(vehicle => {
+      return <VehicleCard key={vehicle.url} vehicle={vehicle} />;
     });
   };
 
   return (
-    <div className="allPlanets">
-      <h1>Planets:</h1>
+    <div className="allVehicles">
+      <h1>Vehicles:</h1>
       {/* movementContainer holds the forward and back buttons as well as the
-      planet cards */}
+      vehicle cards */}
       <div className="movementContainer">
         {/* only display back button if this is not the first serious of cards */}
         {/* BackBtn and ForwardBtn are passed an action props, which when clicked
           will envoke a new fetch to the requisate API to update Redux state */}
-        {props.planetsBack ? (
-          <BackBtn action={() => props.fetchPlanets(props.planetsBack)} />
+        {props.vehiclesBack ? (
+          <BackBtn action={() => props.fetchVehicles(props.vehiclesBack)} />
         ) : (
           <div className="backBtn" />
         )}
-        <div className="planetsContainer">
-          {/* create cards from the planets currently in redux state */}
-          {mapPlanetsToPlanetCards()}
+        <div className="vehiclesContainer">
+          {/* create cards from the vehicles currently in redux state */}
+          {mapVehiclesToVehicleCards()}
         </div>
         {/* only display forward button if this is not the last serious of cards */}
         {/* BackBtn and ForwardBtn are passed an action props, which when clicked
           will envoke a new fetch to the requisate API to update Redux state */}
-        {props.planetsNext ? (
-          <ForwardBtn action={() => props.fetchPlanets(props.planetsNext)} />
+        {props.vehiclesNext ? (
+          <ForwardBtn action={() => props.fetchVehicles(props.vehiclesNext)} />
         ) : (
           <div className="forwardBtn" />
         )}
@@ -55,17 +55,17 @@ const PlanetCards = props => {
 
 const mapStateToProps = state => {
   return {
-    planets: state.planets,
-    planetsNext: state.planetsNext,
-    planetsBack: state.planetsBack
+    vehicles: state.vehicles,
+    vehiclesNext: state.vehiclesNext,
+    vehiclesBack: state.vehiclesBack
   };
 };
 
 const mapDispatchToProps = dispatch => {
-  return { fetchPlanets: endpoint => fetchPlanets(dispatch, endpoint) };
+  return { fetchVehicles: endpoint => fetchVehicles(dispatch, endpoint) };
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(PlanetCards);
+)(VehicleCards);

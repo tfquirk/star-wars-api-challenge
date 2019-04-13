@@ -23,7 +23,7 @@ export function fetchVehicles(dispatch, endpoint) {
         });
       } else {
         dispatch({
-          type: PLANETS_NEXT,
+          type: VEHICLES_NEXT,
           payload: ""
         });
       }
@@ -31,12 +31,12 @@ export function fetchVehicles(dispatch, endpoint) {
       // so the button knows where to fecth to next
       if (vehicles.previous) {
         dispatch({
-          type: PLANETS_BACK,
+          type: VEHICLES_BACK,
           payload: vehicles["previous"]
         });
       } else {
         dispatch({
-          type: PLANETS_BACK,
+          type: VEHICLES_BACK,
           payload: ""
         });
       }
