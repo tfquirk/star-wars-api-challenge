@@ -1,0 +1,47 @@
+/* CSS for Star Wars Vehicles */
+
+.allVehicles h1 {
+  color: yellow;
+  font-weight: bold;
+  font-size: 3em;
+  font-family: "Poppins", "PT+Sans", "Alegreya+Sans", sans-serif;
+  margin-bottom: 0;
+  margin-left: 4vw;
+}
+
+.vehiclesContainer {
+  width: 95%;
+  margin-top: 1vh;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.vehicleCard {
+  width: 17vw;
+  height: 32vh;
+  margin: 2vh auto 0 auto;
+  background-color: #e7dfdd;
+  text-align: center;
+  border-radius: 10px;
+  color: #a239ca;
+}
+
+.vehicleImg {
+  padding-top: 2vh;
+}
+
+.vehicleCard img {
+  border-radius: 100%;
+}
+
+.vehicleCard h3 {
+  font-size: 1.9em;
+  margin-bottom: 0.5vh;
+}
+
+.vehicleCard:hover {
+  background-color: #a239ca;
+  color: #fff !important;
+}

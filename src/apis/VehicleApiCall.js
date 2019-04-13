@@ -2,7 +2,7 @@
 import { UPDATE_VEHICLES, VEHICLES_NEXT, VEHICLES_BACK } from "../types/types";
 
 // set API endpoints to hit as constants
-const VEHICLES_API = "https://swapi.co/api/spaceships/?page=1";
+const VEHICLES_API = "https://swapi.co/api/starships/?page=1";
 
 // fecth to star wars api and get vehicles
 export function fetchVehicles(dispatch, endpoint) {

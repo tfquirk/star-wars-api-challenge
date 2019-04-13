@@ -11,7 +11,7 @@ const VehicleCard = props => {
           alt="Star Wars Vehicle"
         />
       </div>
-      <div className="planetName">
+      <div className="vehicleName">
         <h3>{props.vehicle.name}</h3>
       </div>
     </div>
