@@ -14,7 +14,7 @@ import PlanetCard from "./PlanetCard";
 import BackBtn from "../ForwardBackBtns/BackBtn";
 import ForwardBtn from "../ForwardBackBtns/ForwardBtn";
 
-// return all container to hold all planet cards on display
+// return all container to hold all character cards on display
 const PlanetCards = props => {
   const mapPlanetsToPlanetCards = () => {
     return props.planets.map(planet => {
