@@ -26,6 +26,7 @@
   text-align: center;
   border-radius: 10px;
   color: #a239ca;
+  overflow: hidden;
 }
 
 .planetImg {
