@@ -11,7 +11,7 @@ const PlanetCard = props => {
           alt="Star Wars Character"
         />
       </div>
-      <div className="characterName">
+      <div className="planetName">
         <h3>{props.planet.name}</h3>
       </div>
     </div>

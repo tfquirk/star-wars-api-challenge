@@ -3,6 +3,9 @@ import React from "react";
 // connect to Redux state
 import { connect } from "react-redux";
 
+// styling for characters
+import "../../styles/Homepage/HomepageCharacters.css";
+
 // import CharacterCard to use to make cards for each character
 import CharacterCard from "./CharacterCard";
 import BackBtn from "../ForwardBackBtns/BackBtn";

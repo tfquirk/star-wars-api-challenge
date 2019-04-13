@@ -3,6 +3,9 @@ import React from "react";
 // connect to Redux state
 import { connect } from "react-redux";
 
+// styling for planets
+import "../../styles/Homepage/HomepagePlanets.css";
+
 // import CharacterCard to use to make cards for each planet
 import PlanetCard from "./PlanetCard";
 import BackBtn from "../ForwardBackBtns/BackBtn";
@@ -17,14 +20,14 @@ const PlanetCards = props => {
   };
 
   return (
-    <div className="allCharacters">
+    <div className="allPlanets">
       <h1>Planets:</h1>
       {/* movementContainer holds the forward and back buttons as well as the
       planet cards */}
       <div className="movementContainer">
         {/* only display back button if this is not the first serious of cards */}
         {props.planetsBack ? <BackBtn /> : <div className="backBtn" />}
-        <div className="charactersContainer">
+        <div className="planetsContainer">
           {/* create cards from the planets currently in redux state */}
           {mapCharactersToPlanetCards()}
         </div>

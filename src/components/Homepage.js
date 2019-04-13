@@ -1,19 +1,17 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import CharacterCards from "./characters/CharacterCards";
 import PlanetCards from "./planets/PlanetCards";
 
-// styling
-import "../styles/Homepage.css";
+// generalized styling for html, movementContainer and buttons
+import "../styles/Homepage/Homepage.css";
 
 const Homepage = () => {
   return (
-    <Fragment>
-      <div className="homepageContainer">
-        <CharacterCards />
-        <PlanetCards />
-      </div>
-    </Fragment>
+    <div className="homepageContainer">
+      <CharacterCards />
+      <PlanetCards />
+    </div>
   );
 };
 

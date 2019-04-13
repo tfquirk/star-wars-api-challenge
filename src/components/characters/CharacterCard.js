@@ -1,17 +1,17 @@
 import React from "react";
 
-// return a card with character information
+// return a card with planet information
 
 const CharacterCard = props => {
   return (
-    <div className="characterCard">
-      <div className="characterImg">
+    <div className="planetCard">
+      <div className="planetImg">
         <img
           src="https://dummyimage.com/250x250/fff/aaa"
           alt="Star Wars Character"
         />
       </div>
-      <div className="characterName">
+      <div className="planetName">
         <h3>{props.character.name}</h3>
       </div>
     </div>
