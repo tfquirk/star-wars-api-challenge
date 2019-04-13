@@ -6,6 +6,9 @@ import { connect } from "react-redux";
 // styling for characters
 import "../../styles/Homepage/HomepageCharacters.css";
 
+//import individual API call abstractions
+import { fetchCharacters } from "../../apis/CharacterApiCall";
+
 // import CharacterCard to use to make cards for each character
 import CharacterCard from "./CharacterCard";
 import BackBtn from "../ForwardBackBtns/BackBtn";
@@ -26,13 +29,27 @@ const CharacterCards = props => {
       character cards */}
       <div className="movementContainer">
         {/* only display back button if this is not the first serious of cards */}
-        {props.charactersBack ? <BackBtn /> : <div className="backBtn" />}
+        {/* BackBtn and ForwardBtn are passed an action props, which when clicked
+          will envoke a new fetch to the requisate API to update Redux state */}
+        {props.charactersBack ? (
+          <BackBtn action={() => props.fetchCharacters(props.charactersBack)} />
+        ) : (
+          <div className="backBtn" />
+        )}
         <div className="charactersContainer">
           {/* create cards from the characters currently in redux state */}
           {mapCharactersToCharacterCards()}
         </div>
         {/* only display forward button if this is not the last serious of cards */}
-        {props.charactersNext ? <ForwardBtn /> : <div className="forwardBtn" />}
+        {/* BackBtn and ForwardBtn are passed an action props, which when clicked
+          will envoke a new fetch to the requisate API to update Redux state */}
+        {props.charactersNext ? (
+          <ForwardBtn
+            action={() => props.fetchCharacters(props.charactersNext)}
+          />
+        ) : (
+          <div className="forwardBtn" />
+        )}
       </div>
     </div>
   );
@@ -46,4 +63,11 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(CharacterCards);
+const mapDispatchToProps = dispatch => {
+  return { fetchCharacters: endpoint => fetchCharacters(dispatch, endpoint) };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CharacterCards);

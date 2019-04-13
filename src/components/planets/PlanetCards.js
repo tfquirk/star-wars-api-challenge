@@ -6,6 +6,9 @@ import { connect } from "react-redux";
 // styling for planets
 import "../../styles/Homepage/HomepagePlanets.css";
 
+//import individual API call abstractions
+import { fetchPlanets } from "../../apis/PlanetApiCall";
+
 // import CharacterCard to use to make cards for each planet
 import PlanetCard from "./PlanetCard";
 import BackBtn from "../ForwardBackBtns/BackBtn";
@@ -13,7 +16,7 @@ import ForwardBtn from "../ForwardBackBtns/ForwardBtn";
 
 // return all container to hold all character cards on display
 const PlanetCards = props => {
-  const mapCharactersToPlanetCards = () => {
+  const mapPlanetsToPlanetCards = () => {
     return props.planets.map(planet => {
       return <PlanetCard key={planet.url} planet={planet} />;
     });
@@ -26,13 +29,25 @@ const PlanetCards = props => {
       planet cards */}
       <div className="movementContainer">
         {/* only display back button if this is not the first serious of cards */}
-        {props.planetsBack ? <BackBtn /> : <div className="backBtn" />}
+        {/* BackBtn and ForwardBtn are passed an action props, which when clicked
+          will envoke a new fetch to the requisate API to update Redux state */}
+        {props.planetsBack ? (
+          <BackBtn action={() => props.fetchPlanets(props.planetsBack)} />
+        ) : (
+          <div className="backBtn" />
+        )}
         <div className="planetsContainer">
           {/* create cards from the planets currently in redux state */}
-          {mapCharactersToPlanetCards()}
+          {mapPlanetsToPlanetCards()}
         </div>
         {/* only display forward button if this is not the last serious of cards */}
-        {props.planetsNext ? <ForwardBtn /> : <div className="forwardBtn" />}
+        {/* BackBtn and ForwardBtn are passed an action props, which when clicked
+          will envoke a new fetch to the requisate API to update Redux state */}
+        {props.planetsNext ? (
+          <ForwardBtn action={() => props.fetchPlanets(props.planetsNext)} />
+        ) : (
+          <div className="forwardBtn" />
+        )}
       </div>
     </div>
   );
@@ -46,4 +61,11 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(PlanetCards);
+const mapDispatchToProps = dispatch => {
+  return { fetchPlanets: endpoint => fetchPlanets(dispatch, endpoint) };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(PlanetCards);
