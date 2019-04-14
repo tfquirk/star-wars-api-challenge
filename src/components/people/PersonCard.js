@@ -1,6 +1,6 @@
 import React from "react";
 
-// return a card with planet information
+// return a card with person information
 
 const PersonCard = props => {
   const pushToPersonShow = () => {
