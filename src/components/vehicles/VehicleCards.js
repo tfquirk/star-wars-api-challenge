@@ -18,7 +18,7 @@ import ForwardBtn from "../ForwardBackBtns/ForwardBtn";
 const VehicleCards = props => {
   const mapVehiclesToVehicleCards = () => {
     return props.vehicles.map(vehicle => {
-      return <VehicleCard key={vehicle.url} vehicle={vehicle} />;
+      return <VehicleCard key={vehicle.url} vehicle={vehicle} {...props} />;
     });
   };
 

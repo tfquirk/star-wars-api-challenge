@@ -18,7 +18,7 @@ import ForwardBtn from "../ForwardBackBtns/ForwardBtn";
 const PeopleCards = props => {
   const mapPersonToPeopleCards = () => {
     return props.people.map(person => {
-      return <PersonCard key={person.url} person={person} />;
+      return <PersonCard key={person.url} person={person} {...props} />;
     });
   };
 

@@ -18,7 +18,7 @@ import ForwardBtn from "../ForwardBackBtns/ForwardBtn";
 const PlanetCards = props => {
   const mapPlanetsToPlanetCards = () => {
     return props.planets.map(planet => {
-      return <PlanetCard key={planet.url} planet={planet} />;
+      return <PlanetCard key={planet.url} planet={planet} {...props} />;
     });
   };
 

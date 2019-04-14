@@ -8,7 +8,7 @@ const Home = props => {
   return (
     <Fragment>
       <NavBar />
-      <Homepage />
+      <Homepage {...props} />
     </Fragment>
   );
 };

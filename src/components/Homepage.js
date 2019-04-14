@@ -7,12 +7,14 @@ import VehicleCards from "./vehicles/VehicleCards";
 // generalized styling for html, movementContainer and buttons
 import "../styles/Homepage/Homepage.css";
 
-const Homepage = () => {
+const Homepage = props => {
   return (
     <div className="homepageContainer">
-      <PeopleCards />
-      <PlanetCards />
-      <VehicleCards />
+      {/*RouterProps are passed as propts to all three sections,
+      RouterProps will be used by individual cards to push to show pages */}
+      <PeopleCards {...props} />
+      <PlanetCards {...props} />
+      <VehicleCards {...props} />
     </div>
   );
 };
