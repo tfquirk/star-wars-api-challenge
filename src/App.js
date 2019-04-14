@@ -25,6 +25,9 @@ class App extends Component {
     return (
       <Fragment>
         <Route exact path="/" component={Home} />
+        <Route exact path="/people/:id" component={Person} />
+        <Route exact path="/planets/:id" component={Planet} />
+        <Route exact path="/vehicles/:id" component={Starship} />
       </Fragment>
     );
   }
