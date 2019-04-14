@@ -15,7 +15,7 @@ import { fetchVehicles } from "./apis/VehicleApiCall";
 import Home from "./containers/Home";
 import PersonShow from "./containers/PersonShow";
 import PlanetShow from "./containers/PlanetShow";
-import StarshipShow from "./containers/StarshipShow";
+import VehicleShow from "./containers/VehicleShow";
 
 class App extends Component {
   componentDidMount() {
@@ -30,7 +30,7 @@ class App extends Component {
         <Route exact path="/" component={Home} />
         <Route exact path="/people/:id" component={PersonShow} />
         <Route exact path="/planets/:id" component={PlanetShow} />
-        <Route exact path="/vehicles/:id" component={StarshipShow} />
+        <Route exact path="/vehicles/:id" component={VehicleShow} />
       </Fragment>
     );
   }
