@@ -1,6 +1,6 @@
-/* CSS for Star Wars Characters */
+/* CSS for Star Wars People */
 
-.allCharacters h1 {
+.allPeople h1 {
   color: yellow;
   font-weight: bold;
   font-size: 3em;
@@ -9,7 +9,7 @@
   margin-left: 4vw;
 }
 
-.charactersContainer {
+.peopleContainer {
   width: 95%;
   margin-top: 1vh;
   margin-left: auto;
@@ -18,7 +18,7 @@
   flex-wrap: wrap;
 }
 
-.characterCard {
+.personCard {
   width: 17vw;
   height: 32vh;
   margin: 2vh auto 0 auto;
@@ -29,20 +29,20 @@
   overflow: hidden;
 }
 
-.characterImg {
+.personImg {
   padding-top: 2vh;
 }
 
-.characterCard img {
+.personCard img {
   border-radius: 100%;
 }
 
-.characterCard h3 {
+.personCard h3 {
   font-size: 1.9em;
   margin-bottom: 0.5vh;
 }
 
-.characterCard:hover {
+.personCard:hover {
   background-color: #a239ca;
   color: #fff !important;
 }

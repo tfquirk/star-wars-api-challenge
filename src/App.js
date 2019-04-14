@@ -7,16 +7,19 @@ import { Route, withRouter, Redirect, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 
 //import individual API call abstractions
-import { fetchCharacters } from "./apis/CharacterApiCall";
+import { fetchPeople } from "./apis/PeopleApiCall";
 import { fetchPlanets } from "./apis/PlanetApiCall";
 import { fetchVehicles } from "./apis/VehicleApiCall";
 
 // import needed containers
 import Home from "./containers/Home";
+import PersonShow from "./containers/PersonShow";
+import PlanetShow from "./containers/PlanetShow";
+import StarshipShow from "./containers/StarshipShow";
 
 class App extends Component {
   componentDidMount() {
-    this.props.fetchCharacters();
+    this.props.fetchPeople();
     this.props.fetchPlanets();
     this.props.fetchVehicles();
   }
@@ -25,9 +28,9 @@ class App extends Component {
     return (
       <Fragment>
         <Route exact path="/" component={Home} />
-        <Route exact path="/people/:id" component={Person} />
-        <Route exact path="/planets/:id" component={Planet} />
-        <Route exact path="/vehicles/:id" component={Starship} />
+        <Route exact path="/people/:id" component={PersonShow} />
+        <Route exact path="/planets/:id" component={PlanetShow} />
+        <Route exact path="/vehicles/:id" component={StarshipShow} />
       </Fragment>
     );
   }
@@ -35,7 +38,7 @@ class App extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchCharacters: () => fetchCharacters(dispatch),
+    fetchPeople: () => fetchPeople(dispatch),
     fetchPlanets: () => fetchPlanets(dispatch),
     fetchVehicles: () => fetchVehicles(dispatch)
   };

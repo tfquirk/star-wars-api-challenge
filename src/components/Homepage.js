@@ -1,6 +1,6 @@
 import React from "react";
 
-import CharacterCards from "./characters/CharacterCards";
+import PeopleCards from "./people/PeopleCards";
 import PlanetCards from "./planets/PlanetCards";
 import VehicleCards from "./vehicles/VehicleCards";
 
@@ -10,7 +10,7 @@ import "../styles/Homepage/Homepage.css";
 const Homepage = () => {
   return (
     <div className="homepageContainer">
-      <CharacterCards />
+      <PeopleCards />
       <PlanetCards />
       <VehicleCards />
     </div>

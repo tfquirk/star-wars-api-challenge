@@ -2,20 +2,20 @@ import React from "react";
 
 // return a card with planet information
 
-const CharacterCard = props => {
+const PersonCard = props => {
   return (
-    <div className="planetCard">
-      <div className="planetImg">
+    <div className="personCard">
+      <div className="personImg">
         <img
           src="https://dummyimage.com/250x250/fff/aaa"
           alt="Star Wars Character"
         />
       </div>
-      <div className="planetName">
-        <h3>{props.character.name}</h3>
+      <div className="personName">
+        <h3>{props.person.name}</h3>
       </div>
     </div>
   );
 };
 
-export default CharacterCard;
+export default PersonCard;

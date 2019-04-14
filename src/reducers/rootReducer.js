@@ -1,8 +1,8 @@
 // set default Redux state
 const initialState = {
-  characters: [],
-  charactersNext: "",
-  charactersBack: "",
+  people: [],
+  peopleNext: "",
+  peopleBack: "",
   planets: [],
   planetsNext: "",
   planetsBack: "",
@@ -15,12 +15,12 @@ const initialState = {
 // reducer with cases for Redux
 function reducer(state = initialState, action) {
   switch (action.type) {
-    case "UPDATE_CHARACTERS":
-      return { ...state, characters: action.payload };
-    case "CHARACTERS_NEXT":
-      return { ...state, charactersNext: action.payload };
-    case "CHARACTERS_BACK":
-      return { ...state, charactersBack: action.payload };
+    case "UPDATE_PEOPLE":
+      return { ...state, people: action.payload };
+    case "PEOPLE_NEXT":
+      return { ...state, peopleNext: action.payload };
+    case "PEOPLE_BACK":
+      return { ...state, peopleBack: action.payload };
     case "UPDATE_PLANETS":
       return { ...state, planets: action.payload };
     case "PLANETS_NEXT":

@@ -1,9 +1,9 @@
 // abstracted types to be used with a dispatch action
 
 // characters
-export const UPDATE_CHARACTERS = "UPDATE_CHARACTERS";
-export const CHARACTERS_NEXT = "CHARACTERS_NEXT";
-export const CHARACTERS_BACK = "CHARACTERS_BACK";
+export const UPDATE_PEOPLE = "UPDATE_PEOPLE";
+export const PEOPLE_NEXT = "PEOPLE_NEXT";
+export const PEOPLE_BACK = "PEOPLE_BACK";
 
 // planets
 export const UPDATE_PLANETS = "UPDATE_PLANETS";
