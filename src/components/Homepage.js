@@ -10,7 +10,7 @@ import "../styles/Homepage/Homepage.css";
 const Homepage = props => {
   return (
     <div className="homepageContainer">
-      {/*RouterProps are passed as propts to all three sections,
+      {/*RouterProps are passed as props to all three sections,
       RouterProps will be used by individual cards to push to show pages */}
       <PeopleCards {...props} />
       <PlanetCards {...props} />

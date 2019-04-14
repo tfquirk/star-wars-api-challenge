@@ -3,8 +3,13 @@ import React from "react";
 // return a card with planet information
 
 const PersonCard = props => {
+  const pushToPersonShow = () => {
+    // if a user clicks on a card, push them to the show page for that card
+    props.history.push(props.person.url.substring(20));
+  };
+
   return (
-    <div className="personCard" onClick={() => console.log(props)}>
+    <div className="personCard" onClick={pushToPersonShow}>
       <div className="personImg">
         <img
           src="https://dummyimage.com/250x250/fff/aaa"
