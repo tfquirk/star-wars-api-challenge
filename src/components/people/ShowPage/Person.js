@@ -1,12 +1,7 @@
 import React from "react";
 
-// connect to Redux state
-import { connect } from "react-redux";
-
 // show page for an individual person
-
 const Person = props => {
-  console.log(props.selected);
   return (
     <div className="personShowPage">
       <div className="personShowPageMain">
@@ -36,8 +31,4 @@ const Person = props => {
   );
 };
 
-const mapStateToProps = state => {
-  return { selected: state.selected };
-};
-
-export default connect(mapStateToProps)(Person);
+export default Person;

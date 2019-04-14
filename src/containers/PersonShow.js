@@ -11,7 +11,9 @@ const PersonShow = props => {
   return (
     <Fragment>
       <NavBar />
-      <Person />
+      {/*Pass props to Person, so we may push forward, or backward
+        and my also match the url*/}
+      <Person {...props} />
     </Fragment>
   );
 };
