@@ -17,3 +17,6 @@ export const VEHICLES_BACK = "VEHICLES_BACK";
 
 // log of user site hitory
 export const UPDATE_HISTORY = "UPDATE_HISTORY";
+
+// selected person/planet/vehicle object held here
+export const SET_SELECTED = "SET_SELECTED";

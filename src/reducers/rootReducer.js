@@ -9,7 +9,8 @@ const initialState = {
   vehicles: [],
   vehiclesNext: "",
   vehiclesBack: "",
-  history: []
+  history: [],
+  selected: {}
 };
 
 // reducer with cases for Redux
@@ -35,6 +36,8 @@ function reducer(state = initialState, action) {
       return { ...state, vehiclesBack: action.payload };
     case "UPDATE_HISTORY":
       return { ...state, history: [...state.history, action.payload] };
+    case "SET_SELECTED":
+      return { ...state, selected: action.payload };
     default:
       return state;
   }
