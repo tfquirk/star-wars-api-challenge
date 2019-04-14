@@ -44,7 +44,7 @@ const PeopleCards = props => {
         {/* BackBtn and ForwardBtn are passed an action props, which when clicked
           will envoke a new fetch to the requisate API to update Redux state */}
         {props.peopleNext ? (
-          <ForwardBtn action={() => props.fetchCharacters(props.peopleNext)} />
+          <ForwardBtn action={() => props.fetchPeople(props.peopleNext)} />
         ) : (
           <div className="forwardBtn" />
         )}
