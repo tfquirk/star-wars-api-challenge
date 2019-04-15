@@ -3,6 +3,9 @@ import React, { useState, useEffect } from "react";
 // connect to Redux state
 import { connect } from "react-redux";
 
+// import type for UPDATE_LOG dispatch to keep track of user history
+import { UPDATE_LOG } from "../../../types/types";
+
 // import abstracted methods to fetch for relevant items for a vehicle
 import { fetchVehicle, fetchPilots } from "../../../apis/ShowPages/VehicleShow";
 
@@ -57,6 +60,16 @@ const Vehicle = props => {
       />
     );
   } else {
+    // if this is the first visit, log the vehicle
+    // if this is not the first visit check the last log item, and only log it
+    // if they last log item does not have the same url as the current item. This
+    // prevents any duplicates upon a rerender because of state change
+    if (props.log.length === 0) {
+      props.logVist(vehicle.name, vehicle.url);
+    } else if (props.log[props.log.length - 1].url !== vehicle.url) {
+      props.logVist(vehicle.name, vehicle.url);
+    }
+
     // otherwise return vehicle information
     return (
       <div className="vehicleShowPage">
@@ -69,4 +82,23 @@ const Vehicle = props => {
   }
 };
 
-export default Vehicle;
+const mapStateToProps = state => {
+  return {
+    log: state.log
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    logVist: (name, url) =>
+      dispatch({
+        type: UPDATE_LOG,
+        payload: { name: name, url: url, time: new Date() }
+      })
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Vehicle);
