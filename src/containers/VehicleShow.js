@@ -1,5 +1,8 @@
 import React, { Fragment } from "react";
 
+//styling
+import "../styles/ShowPages/VehicleShow.css";
+
 // components found in components folder
 import NavBar from "../components/NavBar";
 import Vehicle from "../components/vehicles/ShowPage/Vehicle";
