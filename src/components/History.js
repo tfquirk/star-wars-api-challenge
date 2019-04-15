@@ -6,15 +6,30 @@ import { connect } from "react-redux";
 // use react router for links
 import { Link } from "react-router-dom";
 
-// TODO: ADD HISTORY DISPATCH TO ALL PAGES, TRY TO LIMIT IT TO ONE TIME,
-// THEN CREATE TABLE ON THIS PAGE TO DISPLAY ALL USER ACTIONS TAKEN IN A SESSION
-
 const History = props => {
-  console.log(props.history);
-  console.log(props);
+  const mapLogToTable = () => {
+    return props.log.map(logItem => {
+      return (
+        <tr>
+          <td>{logItem.url}</td>
+          <td>{logItem.name}</td>
+          <td>DATE HERE</td>
+        </tr>
+      );
+    });
+  };
   return (
     <div className="historyPage">
-      <h1 style={{ color: "white" }}>History goes here</h1>
+      <table style={{ color: "white", border: "1px solid white" }}>
+        <thead>
+          <tr>
+            <th>URL</th>
+            <th>Page Visited</th>
+            <th>Timestamp</th>
+          </tr>
+        </thead>
+        <tbody>{props.log.length > 0 && mapLogToTable()}</tbody>
+      </table>
     </div>
   );
 };
