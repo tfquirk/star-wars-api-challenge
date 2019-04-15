@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 // connect to Redux state
 import { connect } from "react-redux";
 
-// import type for UPDATE_HISTORY dispatch
+// import type for UPDATE_LOG dispatch to keep track of user history
 import { UPDATE_LOG } from "../../../types/types";
 
 // import abstracted methods to fetch for relevant items for a person
@@ -67,13 +67,16 @@ const Person = props => {
       />
     );
   } else {
-    // otherwise return person information
+    // if this is the first visit, log the person
+    // if this is not the first visit check the last log item, and only log it
+    // if they last log item does not have the same url as the current item. This
+    // prevents any duplicates upon a rerender because of state change
     if (props.log.length === 0) {
       props.logVist(person.name, person.url);
     } else if (props.log[props.log.length - 1].url !== person.url) {
       props.logVist(person.name, person.url);
     }
-
+    // return person information
     return (
       <div className="personShowPage">
         <PersonMain person={person} />
