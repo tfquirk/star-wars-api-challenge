@@ -2,9 +2,13 @@ import React, { useState, useEffect } from "react";
 
 import {
   fetchPerson,
-  fetchHomeworld,
-  fetchVehicle
+  fetchHomeworld
 } from "../../../apis/ShowPages/PersonShow";
+
+// import components needed to build person show page
+import PersonMain from "./PersonShowPieces/PersonMain";
+import PersonHomeworld from "./PersonShowPieces/PersonHomeworld";
+import PersonVehicles from "./PersonShowPieces/PersonVehicles";
 
 // show page for an individual person
 const Person = props => {
@@ -27,26 +31,24 @@ const Person = props => {
           setHomeworld(homeworld);
         });
 
-        // TODO: REVIEW THIS CODE BELOW AND COME UP WITH
-        // AN ALTERNATE SOLOUTION THAT MAY WORK BETTER
-
-        // fetch to get each vehicle
+        // push all endpoints from the number of vehicles, wrapped in a 'fetch'
+        // into the endpoints array
+        let endpoints = [];
         for (let i = 0; i < character.vehicles.length; i++) {
-          fetchVehicle(character.vehicles[i]).then(vehicle => {
-            vehicles.push(vehicle);
-          });
+          endpoints.push(fetch(character.vehicles[i]));
         }
-        setVehicles(vehicles);
+        // use promise.all to wait for all promises to be returned, and then
+        // update the vehicles array so that the DOM rerenders
+        Promise.all(endpoints)
+          .then(values => Promise.all(values.map(value => value.json())))
+          .then(finalVals => {
+            let vh1 = finalVals[0];
+            let vh2 = finalVals[1];
+            setVehicles([vh1, vh2]);
+          });
       });
     }
   });
-
-  // return a list of vehicles to use in <ul></ul>
-  const mapOverVehicles = () => {
-    return vehicles.map(vehicle => {
-      return <li key={vehicle.url}>{vehicle.name}</li>;
-    });
-  };
 
   // if there is no person object yet, return a Star Wars gif while loading
   if (person === null) {
@@ -61,61 +63,10 @@ const Person = props => {
     // otherwise return person information
     return (
       <div className="personShowPage">
-        <div className="personShowPageMain">
-          <div className="personShowImg">
-            <img
-              src="https://dummyimage.com/250x250/fff/aaa"
-              alt="Star Wars Character"
-            />
-          </div>
-          <div className="personShowName">
-            <h1>{person.name}</h1>
-          </div>
-          <div className="personShowDetails">
-            <h3>
-              Hair color:{" "}
-              {person.hair_color.charAt(0).toUpperCase() +
-                person.hair_color.substring(1)}
-            </h3>
-            <h3>
-              Eye color:{" "}
-              {person.eye_color.charAt(0).toUpperCase() +
-                person.eye_color.substring(1)}
-            </h3>
-            <h3>Height: {person.height}</h3>
-            <h3>
-              Gender:{" "}
-              {person.gender.charAt(0).toUpperCase() +
-                person.gender.substring(1)}
-            </h3>
-          </div>
-        </div>
-
+        <PersonMain person={person} />
         <div className="personShowPageRelatedInfo">
-          <div className="personHomewold">
-            <h2>Homeworld: {homeworld && homeworld.name}</h2>
-            <h3>
-              Terrain:{" "}
-              {homeworld &&
-                homeworld.terrain.charAt(0).toUpperCase() +
-                  homeworld.terrain.substring(1)}
-            </h3>
-            <h3>
-              Climate:{" "}
-              {homeworld &&
-                homeworld.climate.charAt(0).toUpperCase() +
-                  homeworld.climate.substring(1)}
-            </h3>
-            <h3>Population: {homeworld && homeworld.population}</h3>
-          </div>
-          <div className="personVehicles">
-            <h2>Vehicle(s):</h2>
-            {vehicles.length != 0 ? (
-              <ul>{mapOverVehicles()}</ul>
-            ) : (
-              `${person.name} does not have any vehicles.`
-            )}
-          </div>
+          <PersonHomeworld homeworld={homeworld} />
+          <PersonVehicles person={person} vehicles={vehicles} />
         </div>
       </div>
     );

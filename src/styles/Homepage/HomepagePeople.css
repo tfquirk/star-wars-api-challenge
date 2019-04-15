@@ -22,10 +22,11 @@
   width: 17vw;
   height: 32vh;
   margin: 2vh auto 0 auto;
-  background-color: #e7dfdd;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #ccc;
   text-align: center;
   border-radius: 10px;
-  color: #a239ca;
+  color: #000;
   overflow: hidden;
 }
 

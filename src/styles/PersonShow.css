@@ -1,26 +1,57 @@
 /* CSS for PersonShow page */
 
 .personShowPage {
-  color: white;
+  width: 95vw;
+  margin: auto;
+  color: #000;
 }
 
 .personShowPageMain {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #ccc;
+  display: flex;
+  margin: 5vh 0 2vw 0;
+  padding: 1vh;
 }
 
 .personShowImg {
+  padding: 2vh;
+}
+
+.displayBlock {
+  display: block;
 }
 
 .personShowName {
+  font-size: 1.5em;
+}
+
+.personShowName h1 {
+  margin-top: 2vh;
 }
 
 .personShowDetails {
 }
 
 .personShowPageRelatedInfo {
+  display: flex;
 }
 
 .personHomewold {
+  padding: 2vh;
+  background: rgba(255, 255, 255, 0.5);
+  width: 44vw;
+  margin-right: 2vw;
+  border: 1px solid #ccc;
 }
 
 .personVehicles {
+  padding: 2vh;
+  background: rgba(255, 255, 255, 0.5);
+  width: 44vw;
+  border: 1px solid #ccc;
+}
+
+h3 {
+  margin: 0;
 }
