@@ -26,7 +26,7 @@ const History = props => {
         <tr>
           <td>{logItem.url}</td>
           <td>{logItem.name}</td>
-          <td>DATE HERE</td>
+          <td>{logItem.time.toLocaleString()}</td>
         </tr>
       );
     });
