@@ -2,13 +2,13 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-const PlanetResidents = props => {
-  // return a list of residents to use in <ul></ul>
-  const mapOverResidents = () => {
-    // this was written to return the names of the residents, and link to their
+const VehiclePilots = props => {
+  // return a list of pilots to use in <ul></ul>
+  const mapOverPilots = () => {
+    // this was written to return the names of the pilots, and link to their
     // individual pages to show more detail
-    if (props.residents.length > 0) {
-      return props.residents.map(vehicle => {
+    if (props.pilots.length > 0) {
+      return props.pilots.map(vehicle => {
         if (vehicle != undefined) {
           return (
             <li key={vehicle.url}>
@@ -23,15 +23,15 @@ const PlanetResidents = props => {
   };
 
   return (
-    <div className="planetResidents">
+    <div className="vehiclePilots">
       <h2>Resident(s):</h2>
-      {props.planet.residents.length != 0 ? (
-        <ul>{mapOverResidents()}</ul>
+      {props.vehicle.pilots.length != 0 ? (
+        <ul>{mapOverPilots()}</ul>
       ) : (
-        `${props.planet.name} does not have any residents.`
+        `${props.vehicle.name} does not have any pilots.`
       )}
     </div>
   );
 };
 
-export default PlanetResidents;
+export default VehiclePilots;
