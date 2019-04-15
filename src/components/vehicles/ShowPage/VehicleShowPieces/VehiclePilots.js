@@ -9,7 +9,7 @@ const VehiclePilots = props => {
     // individual pages to show more detail
     if (props.pilots.length > 0) {
       return props.pilots.map(vehicle => {
-        if (vehicle != undefined) {
+        if (vehicle !== undefined) {
           return (
             <li key={vehicle.url}>
               <h3>
@@ -25,7 +25,7 @@ const VehiclePilots = props => {
   return (
     <div className="vehiclePilots">
       <h2>Pilot(s):</h2>
-      {props.vehicle.pilots.length != 0 ? (
+      {props.vehicle.pilots.length !== 0 ? (
         <ul>{mapOverPilots()}</ul>
       ) : (
         `${props.vehicle.name} does not have any pilots.`

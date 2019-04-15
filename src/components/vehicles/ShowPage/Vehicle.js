@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import { UPDATE_LOG } from "../../../types/types";
 
 // import abstracted methods to fetch for relevant items for a vehicle
-import { fetchVehicle, fetchPilots } from "../../../apis/ShowPages/VehicleShow";
+import { fetchVehicle } from "../../../apis/ShowPages/VehicleShow";
 
 // import components needed to build vehicle show page
 import VehicleMain from "./VehicleShowPieces/VehicleMain";

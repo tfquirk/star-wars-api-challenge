@@ -1,8 +1,5 @@
 import React from "react";
 
-// connect to Redux state
-import { connect } from "react-redux";
-
 // use react router for navigation links
 import { NavLink } from "react-router-dom";
 

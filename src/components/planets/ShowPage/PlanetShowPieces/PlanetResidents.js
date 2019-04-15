@@ -9,7 +9,7 @@ const PlanetResidents = props => {
     // individual pages to show more detail
     if (props.residents.length > 0) {
       return props.residents.map(vehicle => {
-        if (vehicle != undefined) {
+        if (vehicle !== undefined) {
           return (
             <li key={vehicle.url}>
               <h3>
@@ -25,7 +25,7 @@ const PlanetResidents = props => {
   return (
     <div className="planetResidents">
       <h2>Resident(s):</h2>
-      {props.planet.residents.length != 0 ? (
+      {props.planet.residents.length !== 0 ? (
         <ul>{mapOverResidents()}</ul>
       ) : (
         `${props.planet.name} does not have any residents.`

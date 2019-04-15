@@ -7,10 +7,7 @@ import { connect } from "react-redux";
 import { UPDATE_LOG } from "../../../types/types";
 
 // import abstracted methods to fetch for relevant items for a planet
-import {
-  fetchPlanet,
-  fetchResidents
-} from "../../../apis/ShowPages/PlanetShow";
+import { fetchPlanet } from "../../../apis/ShowPages/PlanetShow";
 
 // import components needed to build planet show page
 import PlanetMain from "./PlanetShowPieces/PlanetMain";

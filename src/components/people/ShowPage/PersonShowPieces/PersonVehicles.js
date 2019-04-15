@@ -9,7 +9,7 @@ const PersonVehicles = props => {
     // individual pages to show more detail
     if (props.vehicles.length > 0) {
       return props.vehicles.map(vehicle => {
-        if (vehicle != undefined) {
+        if (vehicle !== undefined) {
           return (
             <li key={vehicle.url}>
               <h3>
@@ -25,7 +25,7 @@ const PersonVehicles = props => {
   return (
     <div className="personVehicles">
       <h2>Vehicle(s):</h2>
-      {props.person.vehicles.length != 0 ? (
+      {props.person.vehicles.length !== 0 ? (
         <ul>{mapOverVehicles()}</ul>
       ) : (
         `${props.person.name} does not have any vehicles.`
