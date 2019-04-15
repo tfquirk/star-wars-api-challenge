@@ -40,11 +40,10 @@
 
 .planetCard h3 {
   font-size: 1.9em;
-  margin-top: 1vh;
-  margin-bottom: 0.5vh;
+  margin: 1vh 0.5vh 0.5vh 0.5vh;
 }
 
 .planetCard:hover {
   background-color: #a239ca;
-  color: #fff !important;
+  color: #fff;
 }
