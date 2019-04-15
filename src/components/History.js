@@ -23,7 +23,7 @@ const History = props => {
   const mapLogToTable = () => {
     return props.log.map(logItem => {
       return (
-        <tr>
+        <tr key={logItem.time.toLocaleString()}>
           <td>{logItem.url}</td>
           <td>{logItem.name}</td>
           <td>{logItem.time.toLocaleString()}</td>
@@ -31,9 +31,10 @@ const History = props => {
       );
     });
   };
+
   return (
     <div className="historyPage">
-      <table style={{ color: "white", border: "1px solid white" }}>
+      <table>
         <thead>
           <tr>
             <th>URL</th>

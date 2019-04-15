@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 
 //styling
-// import "../styles/ShowPages/History.css";
+import "../styles/History.css";
 
 // components found in components folder
 import NavBar from "../components/NavBar";

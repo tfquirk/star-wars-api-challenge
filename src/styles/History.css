@@ -1,0 +1,33 @@
+/* Css for history table */
+
+.historyPage {
+  width: 95vw;
+  margin: auto;
+  color: black;
+  font-family: "Poppins", "PT+Sans", "Alegreya+Sans", sans-serif;
+  text-align: center;
+}
+
+table,
+th,
+td,
+tr {
+  border: 1px solid white;
+}
+
+table {
+  margin: 5vh auto 5vh auto;
+  width: 95vw;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+th {
+  padding: 1vh;
+  font-size: 2em;
+}
+
+td {
+  font-size: 1.5em;
+  padding: 1vh;
+}
