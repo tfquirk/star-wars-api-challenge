@@ -22,16 +22,23 @@ const History = props => {
 
   const mapLogToTable = () => {
     return props.log.map(logItem => {
+      console.log(logItem.url);
       return (
         <tr key={logItem.time.toLocaleString()}>
-          <td>{logItem.url}</td>
-          <td>{logItem.name}</td>
+          <td>
+            <Link to={logItem.url.substring(20)}>
+              {logItem.url.length > 8 ? logItem.url.substring(20) : logItem.url}
+            </Link>
+          </td>
+          <td>
+            <Link to={logItem.url.substring(20)}>{logItem.name}</Link>
+          </td>
           <td>{logItem.time.toLocaleString()}</td>
         </tr>
       );
     });
   };
-
+  console.log(props);
   return (
     <div className="historyPage">
       <table>
