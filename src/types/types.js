@@ -16,4 +16,4 @@ export const VEHICLES_NEXT = "VEHICLES_NEXT";
 export const VEHICLES_BACK = "VEHICLES_BACK";
 
 // log of user site hitory
-export const UPDATE_HISTORY = "UPDATE_HISTORY";
+export const UPDATE_LOG = "UPDATE_LOG";

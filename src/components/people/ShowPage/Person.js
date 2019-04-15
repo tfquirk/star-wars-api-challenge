@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 
 // import type for UPDATE_HISTORY dispatch
-import { UPDATE_HISTORY } from "../../../types/types";
+import { UPDATE_LOG } from "../../../types/types";
 
 // import abstracted methods to fetch for relevant items for a person
 import {
@@ -68,7 +68,9 @@ const Person = props => {
     );
   } else {
     // otherwise return person information
-    if (vehicles.length > 0) {
+    if (props.log.length === 0) {
+      props.logVist(person.name, person.url);
+    } else if (props.log[props.log.length - 1].url !== person.url) {
       props.logVist(person.name, person.url);
     }
 
@@ -84,17 +86,23 @@ const Person = props => {
   }
 };
 
+const mapStateToProps = state => {
+  return {
+    log: state.log
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     logVist: (name, url) =>
       dispatch({
-        type: UPDATE_HISTORY,
+        type: UPDATE_LOG,
         payload: { name: name, url: url, time: new Date() }
       })
   };
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Person);
