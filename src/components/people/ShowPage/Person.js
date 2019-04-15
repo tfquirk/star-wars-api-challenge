@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
 
+// connect to Redux state
+import { connect } from "react-redux";
+
+// import type for UPDATE_HISTORY dispatch
+import { UPDATE_HISTORY } from "../../../types/types";
+
+// import abstracted methods to fetch for relevant items for a person
 import {
   fetchPerson,
   fetchHomeworld
@@ -61,6 +68,10 @@ const Person = props => {
     );
   } else {
     // otherwise return person information
+    if (vehicles.length > 0) {
+      props.logVist(person.name, person.url);
+    }
+
     return (
       <div className="personShowPage">
         <PersonMain person={person} />
@@ -73,4 +84,17 @@ const Person = props => {
   }
 };
 
-export default Person;
+const mapDispatchToProps = dispatch => {
+  return {
+    logVist: (name, url) =>
+      dispatch({
+        type: UPDATE_HISTORY,
+        payload: { name: name, url: url, time: new Date() }
+      })
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Person);

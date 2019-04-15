@@ -16,6 +16,7 @@ import Home from "./containers/Home";
 import PersonShow from "./containers/PersonShow";
 import PlanetShow from "./containers/PlanetShow";
 import VehicleShow from "./containers/VehicleShow";
+import History from "./containers/History";
 
 class App extends Component {
   componentDidMount() {
@@ -31,6 +32,7 @@ class App extends Component {
         <Route exact path="/people/:id" component={PersonShow} />
         <Route exact path="/planets/:id" component={PlanetShow} />
         <Route exact path="/vehicles/:id" component={VehicleShow} />
+        <Route exact path="/history" component={History} />
       </Fragment>
     );
   }

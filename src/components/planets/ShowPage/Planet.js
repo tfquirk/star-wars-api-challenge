@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 
+// connect to Redux state
+import { connect } from "react-redux";
+
+// import abstracted methods to fetch for relevant items for a planet
 import {
   fetchPlanet,
   fetchResidents
