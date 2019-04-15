@@ -21,7 +21,7 @@
 
 .vehicleCard {
   width: 17vw;
-  height: 32vh;
+  height: 33vh;
   margin: 2vh auto 0 auto;
   background: rgba(255, 255, 255, 0.5);
   border: 1px solid #ccc;
@@ -41,6 +41,7 @@
 
 .vehicleCard h3 {
   font-size: 1.9em;
+  margin-top: 1vh;
   margin-bottom: 0.5vh;
 }
 
