@@ -24,7 +24,7 @@ const VehiclePilots = props => {
 
   return (
     <div className="vehiclePilots">
-      <h2>Resident(s):</h2>
+      <h2>Pilot(s):</h2>
       {props.vehicle.pilots.length != 0 ? (
         <ul>{mapOverPilots()}</ul>
       ) : (
