@@ -2,33 +2,43 @@ import React from "react";
 
 const PersonMain = props => {
   return (
-    <div className="personShowPageMain">
-      <div className="personShowImg">
+    <div className="planetShowPageMain">
+      <div className="planetShowImg">
         <img
           src="https://dummyimage.com/250x250/fff/aaa"
-          alt="Star Wars Character"
+          alt="Star Wars Planet"
         />
       </div>
       <div className="displayBlock">
-        <div className="personShowName">
-          <h1>{props.person.name}</h1>
+        <div className="planetShowName">
+          <h1>{props.planet.name}</h1>
         </div>
-        <div className="personShowDetails">
+        <div className="planetShowDetails">
           <h3>
-            Hair color:{" "}
-            {props.person.hair_color.charAt(0).toUpperCase() +
-              props.person.hair_color.substring(1)}
+            Climate:{" "}
+            {props.planet.climate.charAt(0).toUpperCase() +
+              props.planet.climate.substring(1)}
           </h3>
           <h3>
-            Eye color:{" "}
-            {props.person.eye_color.charAt(0).toUpperCase() +
-              props.person.eye_color.substring(1)}
+            Diameter:{" "}
+            {props.planet.diameter.charAt(0).toUpperCase() +
+              props.planet.diameter.substring(1)}
           </h3>
-          <h3>Height: {props.person.height}</h3>
+          <h3>Gravity: {props.planet.gravity}</h3>
           <h3>
-            Gender:{" "}
-            {props.person.gender.charAt(0).toUpperCase() +
-              props.person.gender.substring(1)}
+            Terrain:{" "}
+            {props.planet.terrain.charAt(0).toUpperCase() +
+              props.planet.terrain.substring(1)}
+          </h3>
+          <h3>
+            Surface water:{" "}
+            {props.planet.surface_water.charAt(0).toUpperCase() +
+              props.planet.surface_water.substring(1)}
+          </h3>
+          <h3>
+            Population:{" "}
+            {props.planet.population.charAt(0).toUpperCase() +
+              props.planet.population.substring(1)}
           </h3>
         </div>
       </div>

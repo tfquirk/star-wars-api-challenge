@@ -8,7 +8,9 @@ const PlanetShow = props => {
   return (
     <Fragment>
       <NavBar />
-      <Planet />
+      {/*Pass RouterProps to planet so that the planet may link and navigate
+        from the planet show page */}
+      <Planet {...props} />
     </Fragment>
   );
 };

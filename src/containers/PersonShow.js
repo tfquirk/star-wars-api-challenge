@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 
 //styling
-import "../styles/PersonShow.css";
+import "../styles/ShowPages/PersonShow.css";
 
 // components found in components folder
 import NavBar from "../components/NavBar";
