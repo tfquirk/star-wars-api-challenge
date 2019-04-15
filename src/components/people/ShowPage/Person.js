@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 
 import {
   fetchPerson,
-  fetchHomeworld
+  fetchHomeworld,
+  fetchVehicle
 } from "../../../apis/ShowPages/PersonShow";
 
 // show page for an individual person
@@ -20,18 +21,34 @@ const Person = props => {
       fetchPerson(props.match.url).then(character => {
         // update hook state to include person information
         setPerson(character);
-      });
-    }
 
-    if (person && !homeworld) {
-      fetchHomeworld(person.homeworld).then(homeworld => {
-        console.log(homeworld);
-        setHomeworld(homeworld);
+        // fetch to get information on the homeworld
+        fetchHomeworld(character.homeworld).then(homeworld => {
+          setHomeworld(homeworld);
+        });
+
+        // TODO: REVIEW THIS CODE BELOW AND COME UP WITH
+        // AN ALTERNATE SOLOUTION THAT MAY WORK BETTER
+
+        // fetch to get each vehicle
+        for (let i = 0; i < character.vehicles.length; i++) {
+          fetchVehicle(character.vehicles[i]).then(vehicle => {
+            vehicles.push(vehicle);
+          });
+        }
+        setVehicles(vehicles);
       });
     }
   });
 
-  console.log(person);
+  // return a list of vehicles to use in <ul></ul>
+  const mapOverVehicles = () => {
+    return vehicles.map(vehicle => {
+      return <li key={vehicle.url}>{vehicle.name}</li>;
+    });
+  };
+
+  // if there is no person object yet, return a Star Wars gif while loading
   if (person === null) {
     return (
       <img
@@ -41,6 +58,7 @@ const Person = props => {
       />
     );
   } else {
+    // otherwise return person information
     return (
       <div className="personShowPage">
         <div className="personShowPageMain">
@@ -91,7 +109,12 @@ const Person = props => {
             <h3>Population: {homeworld && homeworld.population}</h3>
           </div>
           <div className="personVehicles">
-            <h3>Vehicles {person.vehicles[0]}</h3>
+            <h2>Vehicle(s):</h2>
+            {vehicles.length != 0 ? (
+              <ul>{mapOverVehicles()}</ul>
+            ) : (
+              `${person.name} does not have any vehicles.`
+            )}
           </div>
         </div>
       </div>
