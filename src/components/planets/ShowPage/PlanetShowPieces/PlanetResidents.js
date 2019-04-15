@@ -17,6 +17,8 @@ const PlanetResidents = props => {
               </h3>
             </li>
           );
+        } else {
+          return null;
         }
       });
     }
