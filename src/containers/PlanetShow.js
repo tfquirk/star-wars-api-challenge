@@ -1,5 +1,8 @@
 import React, { Fragment } from "react";
 
+//styling
+import "../styles/ShowPages/PlanetShow.css";
+
 // components found in components folder
 import NavBar from "../components/NavBar";
 import Planet from "../components/planets/ShowPage/Planet";

@@ -1,0 +1,50 @@
+/* CSS for PlanetShow page */
+
+.planetShowPage {
+  width: 95vw;
+  margin: auto;
+  color: #000;
+}
+
+.planetShowPageMain {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #ccc;
+  display: flex;
+  margin: 5vh 0 2vw 0;
+  padding: 1vh;
+}
+
+.planetShowImg {
+  padding: 2vh;
+}
+
+.displayBlock {
+  display: block;
+}
+
+.planetShowName {
+  font-size: 1.5em;
+}
+
+.planetShowName h1 {
+  margin-top: 2vh;
+}
+
+.planetShowDetails {
+}
+
+.planetShowPageRelatedInfo {
+  display: flex;
+}
+
+.planetResidents {
+  width: 95vw;
+  padding: 2vh;
+  background: rgba(255, 255, 255, 0.5);
+  /* width: 44vw; */
+  border: 1px solid #ccc;
+}
+
+h3 {
+  margin: 0;
+}

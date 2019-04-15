@@ -24,7 +24,7 @@ const PlanetResidents = props => {
 
   return (
     <div className="planetResidents">
-      <h2>Vehicle(s):</h2>
+      <h2>Resident(s):</h2>
       {props.planet.residents.length != 0 ? (
         <ul>{mapOverResidents()}</ul>
       ) : (
