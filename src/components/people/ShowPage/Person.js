@@ -80,7 +80,7 @@ const Person = props => {
     // return person information
     return (
       <div className="personShowPage">
-        <AddTag />
+        <AddTag person={person} />
         <PersonMain person={person} />
         <div className="personShowPageRelatedInfo">
           <PersonHomeworld homeworld={homeworld} />
@@ -93,7 +93,8 @@ const Person = props => {
 
 const mapStateToProps = state => {
   return {
-    log: state.log
+    log: state.log,
+    tags: state.tags
   };
 };
 

@@ -10,7 +10,7 @@ import { ADD_TAG } from "../../types/types";
 // this dispatch is passed to Redux state to be displayed on different components,
 const AddTag = props => {
   const [tagValue, setTagValue] = useState(null);
-  const [color, setColor] = useState(null);
+  const [color, setColor] = useState("red");
 
   const changeTagName = event => {
     setTagValue(event.target.value);
@@ -20,15 +20,15 @@ const AddTag = props => {
     setColor(event.target.value);
   };
 
-  const testSetting = event => {
+  const handleSubmit = event => {
     event.preventDefault();
-    console.log(tagValue, color);
+    props.addTag(props.person.url, tagValue, color);
   };
 
   return (
     <div className="addTag">
       <input name="tagName" type="text" onChange={changeTagName} />
-      <form>
+      <form onSubmit={handleSubmit}>
         <select onChange={changeColor}>
           <option value="red">Red</option>
           <option value="orange">Orange</option>
@@ -37,10 +37,22 @@ const AddTag = props => {
           <option value="blue">Blue</option>
           <option value="violet">Violet</option>
         </select>
-        <input type="submit" value="Add Tag" onSubmit={testSetting} />
+        <input type="submit" value="Add Tag" />
       </form>
     </div>
   );
 };
 
-export default AddTag;
+const mapDispatchToProps = dispatch => {
+  return {
+    addTag: (url, tagName, color) =>
+      dispatch({
+        type: ADD_TAG,
+        payload: { url: url, tagName: tagName, color: color }
+      })
+  };
+};
+export default connect(
+  null,
+  mapDispatchToProps
+)(AddTag);
