@@ -111,3 +111,8 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Person);
+
+// TODO: ADDED ADD_TAG COMPONENT TO PERSON, NOW NEED TO HOOK IT UP TO CONNECT
+// THIS WILL DISPATCH TO THE ARRAY OF TAGS AND THEN PERSON, PLANET, and VEHICLE
+// WILL LOOK FOR THEIR TAGS AND APPY THEM TO THE RIGHT CARDS
+// TAGS SHOULD INCLUDE: label (person/planet/vehicle), url (as a unique identifier), color (to effect CSS)
