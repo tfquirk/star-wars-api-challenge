@@ -20,6 +20,7 @@ const AddTag = props => {
         <option value="blue">Blue</option>
         <option value="violet">Violet</option>
       </select>
+      <input type="submit" />
     </div>
   );
 };

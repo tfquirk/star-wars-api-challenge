@@ -13,6 +13,7 @@ import {
 } from "../../../apis/ShowPages/PersonShow";
 
 // import components needed to build person show page
+import AddTag from "../../ForwardBackBtns/AddTag";
 import PersonMain from "./PersonShowPieces/PersonMain";
 import PersonHomeworld from "./PersonShowPieces/PersonHomeworld";
 import PersonVehicles from "./PersonShowPieces/PersonVehicles";
@@ -79,6 +80,7 @@ const Person = props => {
     // return person information
     return (
       <div className="personShowPage">
+        <AddTag />
         <PersonMain person={person} />
         <div className="personShowPageRelatedInfo">
           <PersonHomeworld homeworld={homeworld} />
