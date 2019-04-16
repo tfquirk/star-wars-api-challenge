@@ -17,3 +17,6 @@ export const VEHICLES_BACK = "VEHICLES_BACK";
 
 // log of user site hitory
 export const UPDATE_LOG = "UPDATE_LOG";
+
+// add tag to person, planet, or vehicle
+export const ADD_TAG = "ADD_TAG";

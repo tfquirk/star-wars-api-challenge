@@ -9,7 +9,8 @@ const initialState = {
   vehicles: [],
   vehiclesNext: "",
   vehiclesBack: "",
-  log: []
+  log: [],
+  tags: []
 };
 
 // reducer with cases for Redux
@@ -35,6 +36,8 @@ function reducer(state = initialState, action) {
       return { ...state, vehiclesBack: action.payload };
     case "UPDATE_LOG":
       return { ...state, log: [...state.log, action.payload] };
+    case "ADD_TAG":
+      return { ...state, tags: [...state.tags, action.payload] };
     default:
       return state;
   }
