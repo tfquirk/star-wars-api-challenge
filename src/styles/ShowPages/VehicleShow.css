@@ -5,6 +5,7 @@
   margin: auto;
   color: #000;
   font-family: "Poppins", "PT+Sans", "Alegreya+Sans", sans-serif;
+  clear: both;
 }
 
 .vehicleShowPageMain {
@@ -19,10 +20,12 @@
   padding: 2vh;
   margin-top: auto;
   margin-bottom: auto;
+  width: 17%;
 }
 
 .displayBlock {
   display: block;
+  width: 33%;
 }
 
 .vehicleShowName {

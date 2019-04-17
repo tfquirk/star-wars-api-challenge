@@ -4,6 +4,8 @@ import React from "react";
 import Tag from "../../../ForwardBackBtns/Tag";
 
 const PersonMain = props => {
+  // if there any tags after the filter checked in the parent component,
+  // create tags to be displayed
   const createTags = () => {
     return props.tags.map(tag => {
       return (

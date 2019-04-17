@@ -20,6 +20,7 @@ const Planet = props => {
   const [planet, setPlanet] = useState(null);
   const [residents, setResidents] = useState([]);
 
+  // if there are tags, filter to only pull out those relevant to this page
   const filterTags = () => {
     return props.tags.filter(tag => {
       return tag.url === planet.url;

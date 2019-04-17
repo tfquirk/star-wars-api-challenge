@@ -1,6 +1,23 @@
 import React from "react";
 
+// import Tag compoent to be able to display tags, if created by user
+import Tag from "../../../ForwardBackBtns/Tag";
+
 const VehicleMain = props => {
+  // if there any tags after the filter checked in the parent component,
+  // create tags to be displayed
+  const createTags = () => {
+    return props.tags.map(tag => {
+      return (
+        <Tag
+          key={tag.url + tag.tagName}
+          tagColor={tag.color}
+          tagName={tag.tagName}
+        />
+      );
+    });
+  };
+
   return (
     <div className="vehicleShowPageMain">
       <div className="vehicleShowImg">
@@ -25,6 +42,7 @@ const VehicleMain = props => {
           <h3>Consumables: {props.vehicle.consumables}</h3>
         </div>
       </div>
+      <div className="tags">{createTags()}</div>
     </div>
   );
 };

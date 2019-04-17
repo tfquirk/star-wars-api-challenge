@@ -25,6 +25,7 @@ const Person = props => {
   const [homeworld, setHomeworld] = useState(null);
   const [vehicles, setVehicles] = useState([]);
 
+  // if there are tags, filter to only pull out those relevant to this page
   const filterTags = () => {
     return props.tags.filter(tag => {
       return tag.url === person.url;

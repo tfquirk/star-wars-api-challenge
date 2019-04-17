@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 
 //styling
 import "../styles/ShowPages/VehicleShow.css";
+import "../styles/Tags.css";
 
 // components found in components folder
 import NavBar from "../components/NavBar";

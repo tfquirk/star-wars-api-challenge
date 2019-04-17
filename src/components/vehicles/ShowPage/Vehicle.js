@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 
 // connect to Redux state
 import { connect } from "react-redux";
@@ -10,6 +10,7 @@ import { UPDATE_LOG } from "../../../types/types";
 import { fetchVehicle } from "../../../apis/ShowPages/VehicleShow";
 
 // import components needed to build vehicle show page
+import AddTag from "../../ForwardBackBtns/AddTag";
 import VehicleMain from "./VehicleShowPieces/VehicleMain";
 import VehiclePilots from "./VehicleShowPieces/VehiclePilots";
 
@@ -18,6 +19,13 @@ const Vehicle = props => {
   // use hook to create initial state of null vehicle
   const [vehicle, setVehicle] = useState(null);
   const [pilots, setPilots] = useState([]);
+
+  // if there are tags, filter to only pull out those relevant to this page
+  const filterTags = () => {
+    return props.tags.filter(tag => {
+      return tag.url === vehicle.url;
+    });
+  };
 
   useEffect(() => {
     // if there is no vehicle, do a fetch based on the url to get the vehicle
@@ -72,19 +80,23 @@ const Vehicle = props => {
 
     // otherwise return vehicle information
     return (
-      <div className="vehicleShowPage">
-        <VehicleMain vehicle={vehicle} />
-        <div className="vehicleShowPageRelatedInfo">
-          <VehiclePilots vehicle={vehicle} pilots={pilots} />
+      <Fragment>
+        <AddTag item={vehicle} />
+        <div className="vehicleShowPage">
+          <VehicleMain vehicle={vehicle} tags={filterTags()} />
+          <div className="vehicleShowPageRelatedInfo">
+            <VehiclePilots vehicle={vehicle} pilots={pilots} />
+          </div>
         </div>
-      </div>
+      </Fragment>
     );
   }
 };
 
 const mapStateToProps = state => {
   return {
-    log: state.log
+    log: state.log,
+    tags: state.tags
   };
 };
 
