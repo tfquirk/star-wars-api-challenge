@@ -9,13 +9,13 @@ import "../styles/NavBar.css";
 const NavBar = props => {
   return (
     <div className="nav">
-      <a href="/">
+      <NavLink to="/">
         <img
           className="navLogo"
           src="http://localhost:3000/images/sww_logo.png"
           alt="Star Wars Wiki Logo"
         />
-      </a>
+      </NavLink>
       <div className="links">
         <ul>
           <NavLink className="navLink" to="/history">
