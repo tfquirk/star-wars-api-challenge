@@ -27,6 +27,8 @@ const PersonVehicles = props => {
   return (
     <div className="personVehicles">
       <h2>Vehicle(s):</h2>
+
+      {/*Bulleted list of all vehicles a Person owns */}
       {props.person.vehicles.length !== 0 ? (
         <ul>{mapOverVehicles()}</ul>
       ) : (

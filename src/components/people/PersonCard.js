@@ -1,13 +1,13 @@
 import React from "react";
 
 // return a card with person information
-
 const PersonCard = props => {
   const pushToPersonShow = () => {
     // if a user clicks on a card, push them to the show page for that card
     props.history.push(props.person.url.substring(20));
   };
 
+  // return a card with and image and a name
   return (
     <div className="personCard" onClick={pushToPersonShow}>
       <div className="personImg">

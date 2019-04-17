@@ -15,6 +15,7 @@ import BackBtn from "../ReusableComponents/BackBtn";
 import ForwardBtn from "../ReusableComponents/ForwardBtn";
 
 // return all container to hold all character cards on display
+// this is used on the homepage
 const PeopleCards = props => {
   const mapPersonToPeopleCards = () => {
     return props.people.map(person => {
@@ -53,6 +54,9 @@ const PeopleCards = props => {
   );
 };
 
+// needs access to all people in redux state to create cards
+// peopleNext and peopleBack allow the component to know if a forward
+// or back btn will need to be rendered
 const mapStateToProps = state => {
   return {
     people: state.people,
@@ -61,6 +65,7 @@ const mapStateToProps = state => {
   };
 };
 
+// allows the compoent to fetch a list of 10 people after rendering
 const mapDispatchToProps = dispatch => {
   return { fetchPeople: endpoint => fetchPeople(dispatch, endpoint) };
 };

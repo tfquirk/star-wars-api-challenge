@@ -88,11 +88,16 @@ const Person = props => {
     console.log(props.tags);
     return (
       <Fragment>
+        {/* allow users to create tags for classification */}
         <AddTag item={person} />
         <div className="personShowPage">
+          {/* the person and any associated tags are passed to the componet to
+          create the main details */}
           <PersonMain person={person} tags={filterTags()} />
           <div className="personShowPageRelatedInfo">
+            {/* Display homeworld information  */}
             <PersonHomeworld homeworld={homeworld} />
+            {/* Display vehicle information */}
             <PersonVehicles person={person} vehicles={vehicles} />
           </div>
         </div>
@@ -101,6 +106,10 @@ const Person = props => {
   }
 };
 
+// 1. need access to the log verify a log for the visit to this page has not already
+// been created (rerenders DO NOT add to log)
+// 2. tags are added to props so they can be sured to find when the url matches
+// the current url
 const mapStateToProps = state => {
   return {
     log: state.log,
@@ -108,6 +117,7 @@ const mapStateToProps = state => {
   };
 };
 
+// each time a user visits this page, add it to the log history
 const mapDispatchToProps = dispatch => {
   return {
     logVist: (name, url) =>
@@ -122,8 +132,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Person);
-
-// TODO: ADDED ADD_TAG COMPONENT TO PERSON, NOW NEED TO HOOK IT UP TO CONNECT
-// THIS WILL DISPATCH TO THE ARRAY OF TAGS AND THEN PERSON, PLANET, and VEHICLE
-// WILL LOOK FOR THEIR TAGS AND APPY THEM TO THE RIGHT CARDS
-// TAGS SHOULD INCLUDE: label (person/planet/vehicle), url (as a unique identifier), color (to effect CSS)

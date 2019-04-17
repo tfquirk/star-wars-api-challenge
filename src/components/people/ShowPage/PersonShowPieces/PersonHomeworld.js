@@ -1,7 +1,9 @@
 import React from "react";
 
+// import link to be able to push users to the people (character) homeworlds
 import { Link } from "react-router-dom";
 
+// displays a Person's homeword details and links to that homeword
 const PersonHomeworld = props => {
   return (
     <div className="personHomewold">
