@@ -1,5 +1,6 @@
 import React from "react";
 
+// import Tag compoent to be able to display tags, if created by user
 import Tag from "../../../ForwardBackBtns/Tag";
 
 const PersonMain = props => {

@@ -26,7 +26,7 @@ const AddTag = props => {
     if (tagValue === null) {
       alert("Please enter a tag name to add a tag.");
     } else {
-      props.addTag(props.person.url, tagValue, color);
+      props.addTag(props.item.url, tagValue, color);
       document.getElementById("tagName").value = "";
       setTagValue(null);
     }

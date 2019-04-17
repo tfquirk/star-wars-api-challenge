@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 
 // connect to Redux state
 import { connect } from "react-redux";
@@ -10,6 +10,7 @@ import { UPDATE_LOG } from "../../../types/types";
 import { fetchPlanet } from "../../../apis/ShowPages/PlanetShow";
 
 // import components needed to build planet show page
+import AddTag from "../../ForwardBackBtns/AddTag";
 import PlanetMain from "./PlanetShowPieces/PlanetMain";
 import PlanetResidents from "./PlanetShowPieces/PlanetResidents";
 
@@ -18,6 +19,12 @@ const Planet = props => {
   // use hook to create initial state of null planet
   const [planet, setPlanet] = useState(null);
   const [residents, setResidents] = useState([]);
+
+  const filterTags = () => {
+    return props.tags.filter(tag => {
+      return tag.url === planet.url;
+    });
+  };
 
   useEffect(() => {
     // if there is no planet, do a fetch based on the url to get the planet
@@ -76,19 +83,23 @@ const Planet = props => {
     }
     // otherwise return planet information
     return (
-      <div className="planetShowPage">
-        <PlanetMain planet={planet} />
-        <div className="planetShowPageRelatedInfo">
-          <PlanetResidents planet={planet} residents={residents} />
+      <Fragment>
+        <AddTag item={planet} />
+        <div className="planetShowPage">
+          <PlanetMain planet={planet} tags={filterTags()} />
+          <div className="planetShowPageRelatedInfo">
+            <PlanetResidents planet={planet} residents={residents} />
+          </div>
         </div>
-      </div>
+      </Fragment>
     );
   }
 };
 
 const mapStateToProps = state => {
   return {
-    log: state.log
+    log: state.log,
+    tags: state.tags
   };
 };
 

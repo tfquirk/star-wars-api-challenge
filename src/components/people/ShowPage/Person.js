@@ -87,7 +87,7 @@ const Person = props => {
     console.log(props.tags);
     return (
       <Fragment>
-        <AddTag person={person} />
+        <AddTag item={person} />
         <div className="personShowPage">
           <PersonMain person={person} tags={filterTags()} />
           <div className="personShowPageRelatedInfo">

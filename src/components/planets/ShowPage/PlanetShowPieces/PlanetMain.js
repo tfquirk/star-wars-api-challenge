@@ -1,6 +1,21 @@
 import React from "react";
 
+// import Tag compoent to be able to display tags, if created by user
+import Tag from "../../../ForwardBackBtns/Tag";
+
 const PersonMain = props => {
+  const createTags = () => {
+    return props.tags.map(tag => {
+      return (
+        <Tag
+          key={tag.url + tag.tagName}
+          tagColor={tag.color}
+          tagName={tag.tagName}
+        />
+      );
+    });
+  };
+
   return (
     <div className="planetShowPageMain">
       <div className="planetShowImg">
@@ -42,6 +57,7 @@ const PersonMain = props => {
           </h3>
         </div>
       </div>
+      <div className="tags">{createTags()}</div>
     </div>
   );
 };
