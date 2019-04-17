@@ -16,7 +16,7 @@ In this repository you will find a front end built with React.js set up to inter
 
 [![alt text][image]][reference link]
 
-[image]: https://github.com/tfquirk/star-wars-api-challenge/blob/master/public/images/ReadMe/star_wars_wiki_home.jpg "Star Wars Wiki Demo Video - click to watch"
+[image]: https://github.com/tfquirk/star-wars-api-challenge/blob/master/public/images/ReadMe/star_wars_wiki_home.png "Star Wars Wiki Demo Video - click to watch"
 [reference link]: https://youtu.be/Es51kKxOlEM
 
 Please click on the image above if you would like to see a video demo of the Star Wars Wiki site.
