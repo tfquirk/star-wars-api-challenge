@@ -46,18 +46,16 @@ The project requirements included:
 
 ## Additional features that could be added
 
-1. Tags:
-
-- Create an additional page to show all tags created
-- Allow users to filter and sort by the tags they created
-- Allow users to delete a tag they created
-- Also show tags on cards on homepage once they have been created
-- have the history page display any tags that were created while on that page
-
-2. Create a 404 page in the event a user tries to navigate to a route that does not exist
-3. Gather images for all characters, planets, and vehicles
-4. Allow users to search for specific characters, planets, and vehicles
-5. Create a back-end, so that users could create accounts and persist the tags they created - that way they would not be lost on a complete refresh or by closing the browser
+- Tags:
+  - Create an additional page to show all tags created
+  - Allow users to filter and sort by the tags they created
+  - Allow users to delete a tag they created
+  - Also show tags on cards on homepage once they have been created
+  - have the history page display any tags that were created while on that page
+- Create a 404 page in the event a user tries to navigate to a route that does not exist
+- Gather images for all characters, planets, and vehicles
+- Allow users to search for specific characters, planets, and vehicles
+- Create a back-end, so that users could create accounts and persist the tags they created - that way they would not be lost on a complete refresh or by closing the browser
 
 ## Technical Specs
 
