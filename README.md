@@ -66,4 +66,5 @@ This project uses the following technologies:
 3. Redux
 4. NPM
 5. CSS
-6. The Star Wars API - https://swapi.co/
+6. React-Router
+7. The Star Wars API - https://swapi.co/
