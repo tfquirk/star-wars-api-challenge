@@ -1,15 +1,27 @@
 // set default Redux state
 const initialState = {
+  // 10 people/characters will be stored here at a time
   people: [],
+  // when this does != "" a forward btn will display for people on the homepage
   peopleNext: "",
+  // when this does != "" a back btn will display for people on the homepage
   peopleBack: "",
+  // 10 planets will be stored here at a time
   planets: [],
+  // when this does != "" a forward btn will display for planets on the homepage
   planetsNext: "",
+  // when this does != "" a back btn will display for planets on the homepage
   planetsBack: "",
+  // 10 vehicles will be stored here at a time
   vehicles: [],
+  // when this does != "" a forward btn will display for vehicles on the homepage
   vehiclesNext: "",
+  // when this does != "" a back btn will display for vehicles on the homepage
   vehiclesBack: "",
+  // all log items will be recorded here - this happens each time a user visits a new
+  // page. Rerenders are not added additional times
   log: [],
+  // any tags are stored here, and then only display on pages where the url matches
   tags: []
 };
 
