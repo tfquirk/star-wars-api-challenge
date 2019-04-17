@@ -8,6 +8,7 @@ const PlanetCard = props => {
     props.history.push(props.planet.url.substring(20));
   };
 
+  // return a card with and image and a name
   return (
     <div className="planetCard" onClick={pushToPlanetShow}>
       <div className="planetImg">

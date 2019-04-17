@@ -20,6 +20,7 @@ const PersonMain = props => {
 
   return (
     <div className="planetShowPageMain">
+      {/* Display image */}
       <div className="planetShowImg">
         <img
           src="https://dummyimage.com/250x250/fff/aaa"
@@ -27,9 +28,12 @@ const PersonMain = props => {
         />
       </div>
       <div className="displayBlock">
+        {/* Display name as header */}
         <div className="planetShowName">
           <h1>{props.planet.name}</h1>
         </div>
+
+        {/* display all planet details */}
         <div className="planetShowDetails">
           <h3>
             Climate:{" "}
@@ -59,6 +63,8 @@ const PersonMain = props => {
           </h3>
         </div>
       </div>
+
+      {/* display all tags that have been created for only this planet */}
       <div className="tags">{createTags()}</div>
     </div>
   );

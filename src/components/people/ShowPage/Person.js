@@ -88,7 +88,9 @@ const Person = props => {
     console.log(props.tags);
     return (
       <Fragment>
-        {/* allow users to create tags for classification */}
+        {/* allow users to create tags for classification - item is the object
+        AddTag will evaluate the url of, so it needs to be particular to component
+        you are in now. */}
         <AddTag item={person} />
         <div className="personShowPage">
           {/* the person and any associated tags are passed to the componet to

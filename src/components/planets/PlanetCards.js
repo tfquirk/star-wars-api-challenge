@@ -53,6 +53,9 @@ const PlanetCards = props => {
   );
 };
 
+// needs access to all people in redux state to create cards
+// peopleNext and peopleBack allow the component to know if a forward
+// or back btn will need to be rendered
 const mapStateToProps = state => {
   return {
     planets: state.planets,
@@ -61,6 +64,7 @@ const mapStateToProps = state => {
   };
 };
 
+// allows the compoent to fetch a list of 10 planets after rendering
 const mapDispatchToProps = dispatch => {
   return { fetchPlanets: endpoint => fetchPlanets(dispatch, endpoint) };
 };

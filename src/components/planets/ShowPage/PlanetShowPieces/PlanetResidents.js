@@ -8,12 +8,12 @@ const PlanetResidents = props => {
     // this was written to return the names of the residents, and link to their
     // individual pages to show more detail
     if (props.residents.length > 0) {
-      return props.residents.map(vehicle => {
-        if (vehicle !== undefined) {
+      return props.residents.map(resident => {
+        if (resident !== undefined) {
           return (
-            <li key={vehicle.url}>
+            <li key={resident.url}>
               <h3>
-                <Link to={vehicle.url.substring(20)}>{vehicle.name}</Link>
+                <Link to={resident.url.substring(20)}>{resident.name}</Link>
               </h3>
             </li>
           );
@@ -27,6 +27,8 @@ const PlanetResidents = props => {
   return (
     <div className="planetResidents">
       <h2>Resident(s):</h2>
+
+      {/* If there are residents from this planet, display them */}
       {props.planet.residents.length !== 0 ? (
         <ul>{mapOverResidents()}</ul>
       ) : (
