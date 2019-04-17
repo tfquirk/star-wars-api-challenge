@@ -20,6 +20,7 @@ const History = props => {
     props.logVist("History page", "/history");
   }
 
+  // create table rows with any log items from Redux state
   const mapLogToTable = () => {
     return props.log.map(logItem => {
       return (
@@ -38,6 +39,7 @@ const History = props => {
     });
   };
 
+  // return table with all log items in the body
   return (
     <div className="historyPage">
       <table>
@@ -54,12 +56,15 @@ const History = props => {
   );
 };
 
+// need access to the log verify a log for the visit to this page has not already
+// been created (rerenders DO NOT add to log)
 const mapStateToProps = state => {
   return {
     log: state.log
   };
 };
 
+// allow a log visit to be created for this history page as well
 const mapDispatchToProps = dispatch => {
   return {
     logVist: (name, url) =>

@@ -36,12 +36,15 @@ const Homepage = props => {
   );
 };
 
+// need access to the log verify a log for the visit to this page has not already
+// been created (rerenders DO NOT add to log)
 const mapStateToProps = state => {
   return {
     log: state.log
   };
 };
 
+// allow a log visit to be created for this history page as well
 const mapDispatchToProps = dispatch => {
   return {
     logVist: (name, url) =>
