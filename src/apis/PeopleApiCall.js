@@ -17,11 +17,15 @@ export function fetchPeople(dispatch, endpoint) {
       // if there is a next key, add it to Redux state
       // so the button knows where to fecth to next
       if (people.next) {
+        // if there is a next key, add it to Redux state
+        // so the button knows where to fecth to next
         dispatch({
           type: PEOPLE_NEXT,
           payload: people["next"]
         });
       } else {
+        // dispatch to Redux state and set to blank, so that the forward button
+        // will not desplay any longer
         dispatch({
           type: PEOPLE_NEXT,
           payload: ""
@@ -30,11 +34,15 @@ export function fetchPeople(dispatch, endpoint) {
       // if there is a previous key, add it to Redux state
       // so the button knows where to fecth to next
       if (people.previous) {
+        // dispatch to Redux state, and now back btn will display since
+        // there is somthing in Redux state to move back to
         dispatch({
           type: PEOPLE_BACK,
           payload: people["previous"]
         });
       } else {
+        // dispatch to Redux state and set to blank, so that the back button
+        // will not desplay any longer
         dispatch({
           type: PEOPLE_BACK,
           payload: ""

@@ -17,11 +17,15 @@ export function fetchPlanets(dispatch, endpoint) {
       // if there is a next key, add it to Redux state
       // so the button knows where to fecth to next
       if (planets.next) {
+        // if there is a next key, add it to Redux state
+        // so the button knows where to fecth to next
         dispatch({
           type: PLANETS_NEXT,
           payload: planets["next"]
         });
       } else {
+        // dispatch to Redux state and set to blank, so that the forward button
+        // will not desplay any longer
         dispatch({
           type: PLANETS_NEXT,
           payload: ""
@@ -30,11 +34,15 @@ export function fetchPlanets(dispatch, endpoint) {
       // if there is a previous key, add it to Redux state
       // so the button knows where to fecth to next
       if (planets.previous) {
+        // dispatch to Redux state, and now back btn will display since
+        // there is somthing in Redux state to move back to
         dispatch({
           type: PLANETS_BACK,
           payload: planets["previous"]
         });
       } else {
+        // dispatch to Redux state and set to blank, so that the back button
+        // will not desplay any longer
         dispatch({
           type: PLANETS_BACK,
           payload: ""
