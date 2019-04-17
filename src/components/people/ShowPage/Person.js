@@ -13,7 +13,7 @@ import {
 } from "../../../apis/ShowPages/PersonShow";
 
 // import components needed to build person show page
-import AddTag from "../../ForwardBackBtns/AddTag";
+import AddTag from "../../ReusableComponents/AddTag";
 import PersonMain from "./PersonShowPieces/PersonMain";
 import PersonHomeworld from "./PersonShowPieces/PersonHomeworld";
 import PersonVehicles from "./PersonShowPieces/PersonVehicles";

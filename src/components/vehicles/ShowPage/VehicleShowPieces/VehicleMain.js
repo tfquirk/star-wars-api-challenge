@@ -1,7 +1,7 @@
 import React from "react";
 
 // import Tag compoent to be able to display tags, if created by user
-import Tag from "../../../ForwardBackBtns/Tag";
+import Tag from "../../../ReusableComponents/Tag";
 
 const VehicleMain = props => {
   // if there any tags after the filter checked in the parent component,

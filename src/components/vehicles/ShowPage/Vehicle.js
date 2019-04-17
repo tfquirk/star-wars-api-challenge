@@ -10,7 +10,7 @@ import { UPDATE_LOG } from "../../../types/types";
 import { fetchVehicle } from "../../../apis/ShowPages/VehicleShow";
 
 // import components needed to build vehicle show page
-import AddTag from "../../ForwardBackBtns/AddTag";
+import AddTag from "../../ReusableComponents/AddTag";
 import VehicleMain from "./VehicleShowPieces/VehicleMain";
 import VehiclePilots from "./VehicleShowPieces/VehiclePilots";
 

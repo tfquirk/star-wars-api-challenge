@@ -11,8 +11,8 @@ import { fetchPeople } from "../../apis/PeopleApiCall";
 
 // import CharacterCard to use to make cards for each character
 import PersonCard from "./PersonCard";
-import BackBtn from "../ForwardBackBtns/BackBtn";
-import ForwardBtn from "../ForwardBackBtns/ForwardBtn";
+import BackBtn from "../ReusableComponents/BackBtn";
+import ForwardBtn from "../ReusableComponents/ForwardBtn";
 
 // return all container to hold all character cards on display
 const PeopleCards = props => {

@@ -11,8 +11,8 @@ import { fetchVehicles } from "../../apis/VehicleApiCall";
 
 // import CharacterCard to use to make cards for each vehicle
 import VehicleCard from "./VehicleCard";
-import BackBtn from "../ForwardBackBtns/BackBtn";
-import ForwardBtn from "../ForwardBackBtns/ForwardBtn";
+import BackBtn from "../ReusableComponents/BackBtn";
+import ForwardBtn from "../ReusableComponents/ForwardBtn";
 
 // return all container to hold all character cards on display
 const VehicleCards = props => {

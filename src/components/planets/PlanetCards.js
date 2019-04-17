@@ -11,8 +11,8 @@ import { fetchPlanets } from "../../apis/PlanetApiCall";
 
 // import CharacterCard to use to make cards for each planet
 import PlanetCard from "./PlanetCard";
-import BackBtn from "../ForwardBackBtns/BackBtn";
-import ForwardBtn from "../ForwardBackBtns/ForwardBtn";
+import BackBtn from "../ReusableComponents/BackBtn";
+import ForwardBtn from "../ReusableComponents/ForwardBtn";
 
 // return all container to hold all planet cards on display
 const PlanetCards = props => {

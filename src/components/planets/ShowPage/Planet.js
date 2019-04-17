@@ -10,7 +10,7 @@ import { UPDATE_LOG } from "../../../types/types";
 import { fetchPlanet } from "../../../apis/ShowPages/PlanetShow";
 
 // import components needed to build planet show page
-import AddTag from "../../ForwardBackBtns/AddTag";
+import AddTag from "../../ReusableComponents/AddTag";
 import PlanetMain from "./PlanetShowPieces/PlanetMain";
 import PlanetResidents from "./PlanetShowPieces/PlanetResidents";
 
