@@ -10,7 +10,7 @@ import { ADD_TAG } from "../../types/types";
 // this dispatch is passed to Redux state to be displayed on different components,
 const AddTag = props => {
   const [tagValue, setTagValue] = useState(null);
-  const [color, setColor] = useState("red");
+  const [color, setColor] = useState("black");
 
   const changeTagName = event => {
     setTagValue(event.target.value);
@@ -22,22 +22,37 @@ const AddTag = props => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    props.addTag(props.person.url, tagValue, color);
+
+    if (tagValue === null) {
+      alert("Please enter a tag name to add a tag.");
+    } else {
+      props.addTag(props.person.url, tagValue, color);
+      document.getElementById("tagName").value = "";
+      setTagValue(null);
+    }
   };
 
   return (
     <div className="addTag">
-      <input name="tagName" type="text" onChange={changeTagName} />
       <form onSubmit={handleSubmit}>
-        <select onChange={changeColor}>
-          <option value="red">Red</option>
+        <label>Classification:</label>
+
+        <input
+          className="addTagName"
+          id="tagName"
+          type="text"
+          onChange={changeTagName}
+        />
+
+        <select className="addTagColor" onChange={changeColor}>
+          <option value="black">Black</option>
+          <option value="blue">Blue</option>
           <option value="orange">Orange</option>
           <option value="yellow">Yellow</option>
-          <option value="green">Green</option>
-          <option value="blue">Blue</option>
-          <option value="violet">Violet</option>
+          <option value="white">white</option>
         </select>
-        <input type="submit" value="Add Tag" />
+
+        <input className="addTagSubmit" type="submit" value="Add Tag" />
       </form>
     </div>
   );
@@ -52,6 +67,7 @@ const mapDispatchToProps = dispatch => {
       })
   };
 };
+
 export default connect(
   null,
   mapDispatchToProps

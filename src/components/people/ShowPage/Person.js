@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 
 // connect to Redux state
 import { connect } from "react-redux";
@@ -24,6 +24,12 @@ const Person = props => {
   const [person, setPerson] = useState(null);
   const [homeworld, setHomeworld] = useState(null);
   const [vehicles, setVehicles] = useState([]);
+
+  const filterTags = () => {
+    return props.tags.filter(tag => {
+      return tag.url === person.url;
+    });
+  };
 
   useEffect(() => {
     // if there is no person, do a fetch based on the url to get the person
@@ -78,15 +84,18 @@ const Person = props => {
       props.logVist(person.name, person.url);
     }
     // return person information
+    console.log(props.tags);
     return (
-      <div className="personShowPage">
+      <Fragment>
         <AddTag person={person} />
-        <PersonMain person={person} />
-        <div className="personShowPageRelatedInfo">
-          <PersonHomeworld homeworld={homeworld} />
-          <PersonVehicles person={person} vehicles={vehicles} />
+        <div className="personShowPage">
+          <PersonMain person={person} tags={filterTags()} />
+          <div className="personShowPageRelatedInfo">
+            <PersonHomeworld homeworld={homeworld} />
+            <PersonVehicles person={person} vehicles={vehicles} />
+          </div>
         </div>
-      </div>
+      </Fragment>
     );
   }
 };

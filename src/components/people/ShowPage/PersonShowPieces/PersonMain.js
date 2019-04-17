@@ -1,6 +1,20 @@
 import React from "react";
 
+import Tag from "../../../ForwardBackBtns/Tag";
+
 const PersonMain = props => {
+  const createTags = () => {
+    return props.tags.map(tag => {
+      return (
+        <Tag
+          key={tag.url + tag.tagName}
+          tagColor={tag.color}
+          tagName={tag.tagName}
+        />
+      );
+    });
+  };
+
   return (
     <div className="personShowPageMain">
       <div className="personShowImg">
@@ -32,6 +46,7 @@ const PersonMain = props => {
           </h3>
         </div>
       </div>
+      <div className="tags">{createTags()}</div>
     </div>
   );
 };

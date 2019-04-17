@@ -1,0 +1,92 @@
+/* Add Tags Form CSS */
+.addTag {
+  margin: 5vh 2.5vw 3vh 0;
+  font-family: "Poppins", "PT+Sans", "Alegreya+Sans", sans-serif;
+  font-size: 1.5em;
+  width: 50vw;
+  float: right;
+}
+
+.addTag form {
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  border: 1px solid white;
+  padding: 1vh;
+}
+
+.addTag label {
+  color: white;
+  width: 10vw;
+  margin-right: 1vw;
+  margin-right: 2vw;
+}
+
+.addTagName {
+  font-size: 0.8em;
+  width: 15vw;
+  margin-right: 2vw;
+  padding: 0.5vh;
+}
+
+.addTagColor {
+  width: 10vw;
+  margin-right: 2vw;
+  text-align: center;
+  font-size: 1em;
+}
+
+.addTagColor select {
+}
+
+.addTagSubmit {
+  font-size: 0.8em;
+  font-weight: bold;
+  border-radius: 4px;
+  width: 10vw;
+  padding: 0.5vh;
+}
+
+.addTagSubmit:hover {
+  background: #ff3e43;
+  color: white;
+}
+
+/* Tags CSS */
+.tags {
+  position: relative;
+  width: 50%;
+}
+
+.tag {
+  float: right;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 0.4vh;
+  margin: 0.5vh;
+}
+
+i {
+  font-size: 1em;
+  font-family: "Poppins", "PT+Sans", "Alegreya+Sans", sans-serif;
+}
+
+.black {
+  color: black;
+}
+
+.orange {
+  color: orange;
+}
+
+.yellow {
+  color: yellow;
+}
+
+.blue {
+  color: blue;
+}
+
+.white {
+  color: white;
+}
