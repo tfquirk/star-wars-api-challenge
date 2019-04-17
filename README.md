@@ -1,68 +1,71 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Star Wars API - Interface
 
-## Available Scripts
+Created by: Timothy Quirk
 
-In the project directory, you can run:
+In this repository you will find a front end built with React.js set up to interact with the Star Wars API - https://swapi.co/. This is a front end only, and no data will persist if the browser tab is closed, or a complete refresh takes place.
 
-### `npm start`
+## Instructions for use
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. After forking and cloning this repository from github, switch into your newly cloned folder.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+2. Install the necessary dependencies with `npm install`.
 
-### `npm test`
+3. You may run the `npm start` command from your terminal in this repo, and you will be able to test the site. Your internet connection speed will affect performance of the site, as you will be hitting the SWAPI - a third party API.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Demo
 
-### `npm run build`
+[![alt text][image]][reference link]
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[image]: https://github.com/tfquirk/star-wars-api-challenge/blob/master/public/images/ReadMe/star_wars_wiki_home.jpg "Star Wars Wiki Demo Video - click to watch"
+[reference link]: https://youtu.be/Es51kKxOlEM
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Please click on the image above if you would like to see a video demo of the Star Wars Wiki site.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Overview
 
-### `npm run eject`
+The project requirements included:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Displaying character, planet, and vehicle details
+- When viewing details pages, links should be included to available information
+- Links should be dynamic, and altering a link should take us to the corresponding character, planet, or vehicle
+- Allow users to tag characters, planets, and vehicles
+- Style with CSS
+- Stretch goal: include a history log of pages a user visited during their visit
+- Versioned in GitHub
+- Include list of assumptions from the project
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## My assumptions
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Since we are using only three endpoints of the Star Wars API, the homepage should directly display highlights of the information we pull from these endpoints.
+  - If we were to include additional endpoints, I would want to redesign the homepage to show the endpoints you could investigate further to clean up the homepage (eg. just show a tile/card to click on for characters, planets, vehicles, starships, etc.).
+- Since the API paginates all data returned, I assumed it was best to work with that data as is instead of manipulating it too much. Thus, on the homepage each endpoint hit only displays 10 cards at a time.
+- Images are not included in the SWAPI, however, I imagined it would be best to design for them as if they were. In any modern website I would expect to see a photo of a character or location to help differentiate it from others.
+- Tags should only be able to be added on a detail page for a specific character, planet, or vehicle. This will improve user UX/UI, as it will limit selections from a large menu (eg all characters, etc.).
+- I choose not to show every available piece of information available on the detail page, but rather what seemed like primary details. I would want confirmation from a Product Manager exactly which information they would like displayed on each page.
+- For the history log, I imagined every page visited should be included in the log, including the homepage and the history page. I only wanted the page recorded once, and therefore did not allow the page to recorded if any re-renders happened.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Additional features that could be added
 
-## Learn More
+1. Tags:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Create an additional page to show all tags created
+- Allow users to filter and sort by the tags they created
+- Allow users to delete a tag they created
+- Also show tags on cards on homepage once they have been created
+- have the history page display any tags that were created while on that page
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Create a 404 page in the event a user tries to navigate to a route that does not exist
+3. Gather images for all characters, planets, and vehicles
+4. Allow users to search for specific characters, planets, and vehicles
+5. Create a back-end, so that users could create accounts and persist the tags they created - that way they would not be lost on a complete refresh or by closing the browser
 
-### Code Splitting
+## Technical Specs
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+This project uses the following technologies:
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. React
+2. JavaScript ES6 and JSX
+3. Redux
+4. NPM
+5. CSS
+6. The Star Wars API - https://swapi.co/
