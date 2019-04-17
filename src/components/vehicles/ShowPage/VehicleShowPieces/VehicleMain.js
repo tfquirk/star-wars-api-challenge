@@ -20,16 +20,21 @@ const VehicleMain = props => {
 
   return (
     <div className="vehicleShowPageMain">
+      {/* Display vehicle image*/}
       <div className="vehicleShowImg">
         <img
           src="https://dummyimage.com/250x250/fff/aaa"
           alt="Star Wars Planet"
         />
       </div>
+
       <div className="displayBlock">
+        {/* Display vehicle name as header */}
         <div className="vehicleShowName">
           <h1>{props.vehicle.name}</h1>
         </div>
+
+        {/* Display all relevant vehicle details */}
         <div className="vehicleShowDetails">
           <h3>Model: {props.vehicle.model}</h3>
           <h3>Manufacturer: {props.vehicle.manufacturer}</h3>
@@ -42,6 +47,8 @@ const VehicleMain = props => {
           <h3>Consumables: {props.vehicle.consumables}</h3>
         </div>
       </div>
+
+      {/* display all tags that have been created for only this vehicle */}
       <div className="tags">{createTags()}</div>
     </div>
   );

@@ -81,10 +81,18 @@ const Vehicle = props => {
     // otherwise return vehicle information
     return (
       <Fragment>
+        {/* allow users to create tags for classification - item is the object
+        AddTag will evaluate the url of, so it needs to be particular to component
+        you are in now. */}
         <AddTag item={vehicle} />
+
         <div className="vehicleShowPage">
+          {/* the vehicle and any associated tags are passed to the componet to
+            create the main details */}
           <VehicleMain vehicle={vehicle} tags={filterTags()} />
+
           <div className="vehicleShowPageRelatedInfo">
+            {/* display all pilots residents, if any */}
             <VehiclePilots vehicle={vehicle} pilots={pilots} />
           </div>
         </div>
@@ -93,6 +101,10 @@ const Vehicle = props => {
   }
 };
 
+// 1. need access to the log verify a log for the visit to this page has not already
+// been created (rerenders DO NOT add to log)
+// 2. tags are added to props so they can be sured to find when the url matches
+// the current url
 const mapStateToProps = state => {
   return {
     log: state.log,
@@ -100,6 +112,7 @@ const mapStateToProps = state => {
   };
 };
 
+// each time a user visits this page, add it to the log history
 const mapDispatchToProps = dispatch => {
   return {
     logVist: (name, url) =>

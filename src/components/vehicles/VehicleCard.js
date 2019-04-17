@@ -8,6 +8,7 @@ const VehicleCard = props => {
     props.history.push(props.vehicle.url.substring(20));
   };
 
+  // return card with image and vehicle name
   return (
     <div className="vehicleCard" onClick={pushToVehicleShow}>
       <div className="vehicleImg">

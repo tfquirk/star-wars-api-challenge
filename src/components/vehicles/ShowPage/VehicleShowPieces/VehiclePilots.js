@@ -27,6 +27,8 @@ const VehiclePilots = props => {
   return (
     <div className="vehiclePilots">
       <h2>Pilot(s):</h2>
+
+      {/* display all piolots for this vehicle, if any */}
       {props.vehicle.pilots.length !== 0 ? (
         <ul>{mapOverPilots()}</ul>
       ) : (
