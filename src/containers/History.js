@@ -7,7 +7,7 @@ import "../styles/History.css";
 import NavBar from "../components/NavBar";
 import History from "../components/History";
 
-const VehicleShow = props => {
+const HistoryContainer = props => {
   return (
     <Fragment>
       <NavBar />
@@ -18,4 +18,4 @@ const VehicleShow = props => {
   );
 };
 
-export default VehicleShow;
+export default HistoryContainer;
