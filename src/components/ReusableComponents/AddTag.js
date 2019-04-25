@@ -58,7 +58,7 @@ const AddTag = props => {
           <option value="blue">Blue</option>
           <option value="orange">Orange</option>
           <option value="yellow">Yellow</option>
-          <option value="white">white</option>
+          <option value="white">White</option>
         </select>
 
         <input className="addTagSubmit" type="submit" value="Add Tag" />
