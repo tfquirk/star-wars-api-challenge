@@ -26,7 +26,7 @@ const initialState = {
 };
 
 // reducer with cases for Redux
-function reducer(state = initialState, action) {
+export function reducer(state = initialState, action) {
   switch (action.type) {
     case "UPDATE_PEOPLE":
       return { ...state, people: action.payload };

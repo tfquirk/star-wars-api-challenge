@@ -6,9 +6,13 @@ import React from "react";
 // fetchCharacters from apis/CharacterApiCall
 const BackBtn = props => {
   return (
-    <div className="backBtn" onClick={() => props.action()}>
+    <button
+      aria-label={`see previous ${props.type}`}
+      className="backBtn"
+      onClick={() => props.action()}
+    >
       <i className="fas fa-caret-left fa-6x" />
-    </div>
+    </button>
   );
 };
 

@@ -6,9 +6,13 @@ import React from "react";
 // fetchCharacters from apis/CharacterApiCall
 const ForwardBtn = props => {
   return (
-    <div className="forwardBtn" onClick={() => props.action()}>
+    <button
+      aria-label={`see more ${props.type}`}
+      className="forwardBtn"
+      onClick={props.action}
+    >
       <i className="fas fa-caret-right fa-6x" />
-    </div>
+    </button>
   );
 };
 

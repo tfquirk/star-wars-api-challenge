@@ -9,7 +9,7 @@ const PersonCard = props => {
 
   // return a card with and image and a name
   return (
-    <div className="personCard" onClick={pushToPersonShow}>
+    <div className="personCard" onClick={props.onClick || pushToPersonShow}>
       <div className="personImg">
         <img
           src="https://dummyimage.com/250x250/fff/aaa"
