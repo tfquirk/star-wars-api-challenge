@@ -48,12 +48,17 @@ const AddTag = props => {
 
         <input
           className="addTagName"
+          aria-label="Input tag text"
           id="tagName"
           type="text"
           onChange={changeTagName}
         />
 
-        <select className="addTagColor" onChange={changeColor}>
+        <select
+          className="addTagColor"
+          onChange={changeColor}
+          aria-label="Select tag color"
+        >
           <option value="black">Black</option>
           <option value="blue">Blue</option>
           <option value="orange">Orange</option>

@@ -25,7 +25,6 @@ describe("Components/People/PersonCard", () => {
 
     const testName = getByText("TestName");
     fireEvent.click(testName);
-    console.log(container);
 
     expect(container).toBeTruthy();
   });

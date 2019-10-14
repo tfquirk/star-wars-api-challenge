@@ -1,11 +1,11 @@
 import React from "react";
 import { createStore } from "redux";
-import { Provider } from "react-redux";
 import { reducer } from "../../reducers/rootReducer";
-import { fireEvent, render } from "@testing-library/react";
+import { fireEvent } from "@testing-library/react";
 
 import PeopleCards from "./PeopleCards";
 import { mapPersonToPeopleCards } from "./PeopleHelpers";
+import { renderWithRedux } from "../../../TestHelpers/TestHelpers";
 
 const people = [
   {
@@ -44,13 +44,6 @@ const initialState2 = {
 
 const store = createStore(reducer, initialState);
 const store2 = createStore(reducer, initialState2);
-
-function renderWithRedux(str, ui, { store = str } = {}) {
-  return {
-    ...render(<Provider store={store}>{ui}</Provider>),
-    store
-  };
-}
 
 describe("Components/People/PeopleCards", () => {
   it("renders cards with a image and name", () => {
