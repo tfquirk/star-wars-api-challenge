@@ -1,16 +1,5 @@
 /* Homepage CSS (generalized) */
 
-/* Space and stars background image found here:
-  http://www.script-tutorials.com/demos/360/images/stars.png
-*/
-
-html {
-  background: #000
-    url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top
-    center;
-  z-index: 0;
-}
-
 /* movementContainer holds the forward and back btns and the character, planet
   or vehicle cards container */
 
@@ -18,23 +7,4 @@ html {
   margin-left: auto;
   margin-right: auto;
   display: flex;
-}
-
-/* Forward and Back buttons */
-
-.backBtn {
-  color: white;
-  margin: auto 1vw;
-  padding: 25vh 0.5vw;
-}
-
-.forwardBtn {
-  color: white;
-  margin: auto 1vw;
-  padding: 25vh 0.5vw;
-}
-
-div.backBtn:hover,
-div.forwardBtn:hover {
-  color: #ff3e43;
 }

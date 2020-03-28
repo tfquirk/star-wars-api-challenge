@@ -1,4 +1,18 @@
 import React from "react";
+import styled from "styled-components";
+
+const Forward = styled.button`
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin: auto 0;
+  padding: 25vh 16px;
+
+  &:hover {
+    color: #ff3e43;
+  }
+`;
 
 // return a forward btn that will perform an action onClick
 // this action is passed as a prop based on where the button is - for example,
@@ -6,13 +20,9 @@ import React from "react";
 // fetchCharacters from apis/CharacterApiCall
 const ForwardBtn = props => {
   return (
-    <button
-      aria-label={`see more ${props.type}`}
-      className="forwardBtn"
-      onClick={props.action}
-    >
+    <Forward aria-label={`see more ${props.type}`} onClick={props.action}>
       <i className="fas fa-caret-right fa-6x" />
-    </button>
+    </Forward>
   );
 };
 

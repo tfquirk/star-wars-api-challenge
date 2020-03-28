@@ -59,35 +59,7 @@
   width: 50%;
 }
 
-.tag {
-  float: right;
-  border: 1px solid;
-  border-radius: 4px;
-  padding: 0.4vh;
-  margin: 0.5vh;
-}
-
 i {
   font-size: 1em;
   font-family: "Poppins", "PT+Sans", "Alegreya+Sans", sans-serif;
-}
-
-.black {
-  color: black;
-}
-
-.orange {
-  color: orange;
-}
-
-.yellow {
-  color: yellow;
-}
-
-.blue {
-  color: blue;
-}
-
-.white {
-  color: white;
 }
