@@ -85,7 +85,6 @@ const Person = props => {
       props.logVist(person.name, person.url);
     }
     // return person information
-    console.log(props.tags);
     return (
       <Fragment>
         {/* allow users to create tags for classification - item is the object
@@ -130,7 +129,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Person);
+export default connect(mapStateToProps, mapDispatchToProps)(Person);

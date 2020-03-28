@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import styled from "styled-components";
 
 // import ability to use React Router funcitionality
-import { Route, withRouter, Redirect, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 // connect to Redux state
 import { connect } from "react-redux";
