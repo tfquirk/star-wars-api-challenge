@@ -10,6 +10,16 @@ describe("Components/ReuseableComponents/Tag", () => {
 
     const tag = getByText("THIS IS A TEST");
     expect(tag).toBeTruthy();
-    expect(tag.parentElement.className).toEqual("tag orange");
+    expect(tag.parentElement).toHaveStyleRule("color", "orange");
+  });
+
+  it("Renders properly colored tag", () => {
+    const { getByText } = render(
+      <Tag tagColor="red" tagName="This is a test" />
+    );
+
+    const tag = getByText("THIS IS A TEST");
+    expect(tag).toBeTruthy();
+    expect(tag.parentElement).toHaveStyleRule("color", "red");
   });
 });

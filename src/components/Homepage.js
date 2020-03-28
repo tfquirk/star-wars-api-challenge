@@ -13,6 +13,14 @@ import VehicleCards from "./vehicles/VehicleCards";
 
 // generalized styling for html, movementContainer and buttons
 import "../styles/Homepage/Homepage.css";
+import styled from "styled-components";
+
+const Background = styled.html`
+  background: #000
+    url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top
+    center;
+  z-index: 0;
+`;
 
 const Homepage = props => {
   // if this is the first visit, log the planet
@@ -26,7 +34,7 @@ const Homepage = props => {
   }
 
   return (
-    <div className="homepageContainer">
+    <div>
       {/*RouterProps are passed as props to all three sections,
       RouterProps will be used by individual cards to push to show pages */}
       <PeopleCards {...props} />
@@ -55,7 +63,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Homepage);
+export default connect(mapStateToProps, mapDispatchToProps)(Homepage);
