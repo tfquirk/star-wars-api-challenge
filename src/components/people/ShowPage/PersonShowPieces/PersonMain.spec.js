@@ -52,13 +52,11 @@ describe("Components/people/ShowPage/PersonShowPieces/PersonMain", () => {
   });
 
   it("Renders a person's tags", () => {
-    const { getByText, getAllByTestId } = render(
-      <PersonMain person={person} tags={tags} />
-    );
+    const { getByText } = render(<PersonMain person={person} tags={tags} />);
 
-    const tagText = getByText("I AM BLUE AND THEREFORE SAD");
-    expect(tagText).toBeTruthy();
-    const allTags = getAllByTestId("TAG");
-    expect(allTags).toHaveLength(2);
+    const tagTextOne = getByText("I AM BLUE AND THEREFORE SAD");
+    expect(tagTextOne).toBeTruthy();
+    const tagTextTwo = getByText("I AM RED AND THEREFORE ANGRY");
+    expect(tagTextTwo).toBeTruthy();
   });
 });

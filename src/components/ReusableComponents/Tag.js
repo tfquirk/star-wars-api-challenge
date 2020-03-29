@@ -18,7 +18,7 @@ const Tag = props => {
   // TODO: WRITE A METHOD TO DELETE TAG ONCLICK
 
   return (
-    <ColorfulTag color={props.tagColor} data-testid="TAG">
+    <ColorfulTag color={props.tagColor}>
       <i className="fas fa-tag"> {props.tagName.toUpperCase()}</i>
     </ColorfulTag>
   );
